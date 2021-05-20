@@ -41,14 +41,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $color-bg-red;
+    background: $color-bg-green;
     @include respond(phone){
         display: none;
     }
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: $color-bg-red;
+    background: $color-bg-green;
     @include respond(phone){
         display: none;
     }

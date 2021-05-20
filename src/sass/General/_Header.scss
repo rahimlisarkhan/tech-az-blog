@@ -1,0 +1,105 @@
+.header-desktop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7rem;
+    background-color: #292a2c;
+  
+    img{
+        width: 20rem;
+    }
+    &__content{
+        display: flex;
+        align-items: center;
+        width: 120rem;
+        height: 100%;
+        
+        &__logo{
+            width: 25%;
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.03);
+            }
+            img{
+                width: 22rem;
+            }
+        }
+
+        &__navbar{
+            width: 50%;
+            display: flex;
+            font-size: 1.8rem;
+            font-weight: bold;
+            height: 100%;
+
+            ul{
+                width: 100%;
+                display: flex;
+                color: white;
+                letter-spacing: .15rem;
+                align-items: flex-end;
+                padding-bottom: .8rem;
+                justify-content: space-evenly;
+
+                li{
+                    cursor: pointer;
+
+                    &:hover{
+                        color: $color-bg-green;
+                    }
+                }
+            }
+            .active{
+                color: $color-bg-green;
+            }
+        }
+
+        &__user{
+            display: flex;
+            justify-content: flex-end;
+            width: 25%;
+            color: white;
+            cursor: pointer;
+            &__btn{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 1.4rem;
+                margin-left: 1.3rem;
+                .userimage{
+                    display: flex;
+                    box-shadow: 0 .1rem .4rem .3rem rgba(61, 61, 61, 0.281);
+                    align-items: center;
+                    justify-content: center;
+                    text-shadow: 0 .1rem .4rem .3rem rgba(95, 94, 94, 0.582) ;
+                    width:5rem;
+                    font-weight: 400;
+                font-size: 1.8rem;
+                    letter-spacing: .1rem;
+                    height: 5rem;
+                    margin-right: .7rem;
+                    border-radius: 50%;
+                    background-color: rgb(218, 201, 157);
+                }
+
+                button{
+                    width: auto;
+                    height: 3.5rem;
+                    padding: 0 1rem !important;
+                    color: $color-bg-green;
+                    letter-spacing: .1rem;
+                    background-color: transparent;
+                    border: .1rem solid $color-bg-green;
+                    border-radius: 1rem;
+                    &:hover{
+                    background-color: $color-bg-green;
+                    color: rgb(37, 37, 37);
+                    }
+                }
+            }
+        }
+
+      
+    }
+}

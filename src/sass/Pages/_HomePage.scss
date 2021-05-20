@@ -1,0 +1,99 @@
+.news-content {
+    width: 120rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    &__trend {
+        width: 100%;
+        border-radius: 1rem;
+        height: 46.8rem;
+        position: relative;
+        box-shadow: 0 .1rem 1rem .5rem rgba(255, 255, 255, 0.151);
+        cursor: pointer;
+        &:hover {
+            transform: scale(.98);
+            box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.192);
+        }
+
+        &__image {
+            img {
+                width: 100%;
+                height: 46.8rem;
+                border-radius: 1rem;
+
+            }
+        }
+
+        &__info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+
+            background: linear-gradient(rgba(3, 3, 3, 0.308), #bbff298f 80%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+            color: white;
+
+            h1 {
+                font-size: 3rem;
+                font-weight: bold;
+                text-shadow: 0 .1rem .3rem .2rem rgba(0, 0, 0, 0.26)
+            }
+
+            p {
+                font-size: 1.4rem;
+                text-shadow: 0 .1rem .3rem .2rem rgba(0, 0, 0, 0.377)
+            }
+        }
+
+    }
+
+    &__last {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+
+        &__card {
+            width: 58.5rem;
+            height: 35rem;
+            position: relative;
+            box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.041);
+            margin-bottom: 3rem;
+            cursor: pointer;
+            border-radius: 1rem;
+
+            &:hover {
+                transform: scale(.97);
+                box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.192);
+            }
+
+            &__info {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 1rem;
+                background: linear-gradient(rgba(3, 3, 3, 0.308), #bbff298f 80%);
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                padding: 3rem;
+                color: white;
+
+            }
+
+            img {
+                width: 58.5rem;
+                border-radius: 1rem;
+                height: 35rem;
+            }
+        }
+    }
+}
