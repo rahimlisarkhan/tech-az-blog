@@ -52,6 +52,7 @@
             }
             .active{
                 color: $color-bg-green;
+                border-bottom: .1rem solid $color-bg-green;
             }
         }
 
@@ -91,7 +92,6 @@
                     letter-spacing: .1rem;
                     background-color: transparent;
                     border: .1rem solid $color-bg-green;
-                    border-radius: 1rem;
                     &:hover{
                     background-color: $color-bg-green;
                     color: rgb(37, 37, 37);

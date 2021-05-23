@@ -1,5 +1,4 @@
-const { default: Layout } = require("../../layout/Layout")
-
+import Layout from "../../components/layout/Layout"
 
 const NewsForIDContainer = () => {
 

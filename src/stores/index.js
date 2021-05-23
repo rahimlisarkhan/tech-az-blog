@@ -1,10 +1,10 @@
-import {userStore} from './userStore';
-import {newsStore} from './newsStore';
+import userStore from './userStore';
+import newsStore from './newsStore';
 
 
 const stores = {
-    // newsStore,
-    // userStore,
+    newsStore,
+    userStore,
 };
 
 export default stores;

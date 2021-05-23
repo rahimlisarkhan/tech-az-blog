@@ -1,0 +1,1 @@
+export const url = 'https://188.166.98.147/'

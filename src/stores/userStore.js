@@ -1,29 +1,74 @@
-import {makeObservable, observable, action} from 'mobx';
-import * as request from "../utils/request";
+import {
+    makeAutoObservable
+} from 'mobx';
+import * as api from "../helper/api";
 
 
-class UserStore{
-    
-    @observable userInfo
-    
-    constructor(){
-        makeObservable(this);
+class UserInfo {
+
+    userToken = null;
+    userInfo = null;
+    userRegisterValidate = null;
+    userLoginValidate = null;
+
+
+    constructor() {
+        makeAutoObservable(this);
     }
 
-    //Request
-    async getOrderActive(data,token) {
-        const res = await request.getOrderActive(data,token);
-        this.setOrderActive(res.data);
 
+    //API REQUEST
+    //AUTH
+    async register(data) {
+        const res = await api.register(data);
+        console.log(res);
+
+        // if (res.ok) {
+        //     // this.setToken(res.data.data.access_token);
+        //     // localStorage.setItem('token', res.data.data.access_token)
+        //     // this.setRegister(null)
+        //     console.log(res.ok);
+
+        // } else {
+        //     this.setRegister(res.data);
+        // }
     }
+
+    async login(data) {
+        const res = await api.login(data);
+
+        // if (res.ok) {
+        //     // this.setToken(res.data.data.access_token);
+        //     // localStorage.setItem('token', res.data.data.access_token)
+        //     // this.setLogin(null)
+
+        // } else {
+        //     this.setLogin(res.data);
+        // }
+    }
+
+
 
 
     //Actions
-    @action setOrderActive(order){
-        this.orderHistoryActive = order;
+    //Auth--
+    setRegister(data) {
+        this.userRegisterValidate = data
+    }
+    setLogin(data) {
+        this.userLoginValidate = data;
     }
 
-    
+    setToken(token) {
+        this.userToken = token;
+    }
+
+    //user
+    setUser(data) {
+        this.userInfo = data;
+    }
+
+
 }
 
-export const userStore = new UserStore();
+export default new UserInfo();

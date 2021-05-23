@@ -1,13 +1,18 @@
 
-import Layout from "../../layout/Layout"
+import newsimage1 from "../../img/neüs-image.jpg"
+import newsimage2 from "../../img/nevs-images.jpg"
+import Layout from "../../components/layout/Layout"
+
+import { withRouter } from "react-router";
 
 
-const NewsPageContainer = (props) => {
+const VideoPageContainer = (props) => {
 
+    console.log(props);
 
     return (
         <Layout>
-             <div className="news-content">
+                <div className="news-content">
                 <div className="news-content__trend" onClick={() => props.history.push(`/xeberler/45`)}>
                     <div className="news-content__trend__image">
                         <img src={newsimage1} />
@@ -90,8 +95,9 @@ const NewsPageContainer = (props) => {
                     
                 </div>
             </div>
+      
         </Layout>
     )
 }
 
-export default NewsPageContainer
+export default withRouter(VideoPageContainer)

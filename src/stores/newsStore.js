@@ -1,29 +1,25 @@
-import {makeObservable, observable, action} from 'mobx';
-import * as request from "../utils/request";
+import {makeAutoObservable} from 'mobx';
 
 
 class NewsStore{
     
-    @observable allNews
-    
+    allNews =null
     constructor(){
-        makeObservable(this);
+        makeAutoObservable(this);
     }
 
     //Request
-    async getOrderActive(data,token) {
-        const res = await request.getOrderActive(data,token);
-        this.setOrderActive(res.data);
+    async getAllNews() {
 
     }
 
 
     //Actions
-    @action setOrderActive(order){
-        this.orderHistoryActive = order;
+    setAllNews(data){
+        this.allNews = data;
     }
 
     
 }
 
-export const newsStore = new NewsStore();
+export default new NewsStore();
