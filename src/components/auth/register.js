@@ -4,6 +4,7 @@ import stores from "../../stores/";
 import { observer } from "mobx-react";
 
 let RegisterPopup = (props) => {
+  console.log(stores);
   //hooks
   const [passwordShow, setPasswordShow] = useState(false);
   const [passwordShow2, setPasswordShow2] = useState(false);
@@ -25,9 +26,13 @@ let RegisterPopup = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    stores.userStore.register(formData);
 
-    console.log(formData);
+    const formdata = new FormData();
+    formdata.append('email',formData.email);
+    
+    // formData.append('action', 'previewImg');
+    stores.userStore.register(formdata);
+
     // setDisabled(!disableBtn)
 
   };
@@ -102,6 +107,7 @@ let RegisterPopup = (props) => {
           >
             <input
               type='email'
+              name='email'
               placeholder='email'
               onChange={handleChange}
               value={formData.email}

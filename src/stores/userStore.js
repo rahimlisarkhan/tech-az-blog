@@ -23,15 +23,13 @@ class UserInfo {
         const res = await api.register(data);
         console.log(res);
 
-        // if (res.ok) {
-        //     // this.setToken(res.data.data.access_token);
-        //     // localStorage.setItem('token', res.data.data.access_token)
-        //     // this.setRegister(null)
-        //     console.log(res.ok);
-
-        // } else {
-        //     this.setRegister(res.data);
-        // }
+        if (res.status === 400) {
+            this.setRegister(res.data);
+        } else {
+            // this.setToken(res.data.data.access_token);
+            // localStorage.setItem('techaz', res.data.data.access_token)
+            this.setRegister(null)
+        }
     }
 
     async login(data) {

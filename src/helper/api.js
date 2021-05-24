@@ -32,3 +32,18 @@ export async function login(data){
   } 
 }
 //AUTH--end
+
+
+export async function getAllNews(){
+  try {
+    const response = await getData(`mixdata/`,{})
+
+    return response
+ }catch (error) {
+      // Error 😨
+    toast.error(`Serverdə xəta baş verdi...`)
+
+    console.log(error);
+  } 
+
+}

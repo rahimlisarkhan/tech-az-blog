@@ -4,95 +4,67 @@ import newsimage2 from "../../img/nevs-images.jpg"
 import Layout from "../../components/layout/Layout"
 import stores from "../../stores"
 import { withRouter } from "react-router";
+import { useEffect, useState } from "react";
+import Loading from "../../components/ui/loading";
 
 
 const HomePageContainer = (props) => {
 
-    console.log(stores);
+    const [lastInfo, setLastInfo] =  useState(null)
+    const [allInfo, setAllInfo] =  useState(null)
 
+
+    useEffect(()=>{
+        stores.newsStore.getAllNews()
+        const lastInfo = stores.newsStore.allNews && stores.newsStore.allNews.reverse().slice(-1)
+        const allInfo = stores.newsStore.allNews && stores.newsStore.allNews.slice(1)
+
+        setLastInfo(lastInfo)
+        setAllInfo(allInfo)
+
+
+    },[stores.newsStore.allNews])
+
+
+    console.log(lastInfo);
+    
     return (
-        <Layout>
+        !lastInfo || !allInfo?
+        <Loading/>
+        :<Layout>
             <div className="news-content">
-                <div className="news-content__trend" onClick={() => props.history.push(`/esas/45`)}>
+                <div className="news-content__trend" onClick={() => props.history.push(`/esas/${lastInfo[0].slug}`)}>
                     <div className="news-content__trend__image">
-                        <img src={newsimage1} alt='test' />
+                        <img src={lastInfo[0].image} alt='test' />
                     </div>
                     
                     <div className="news-content__trend__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
+                        <p>Xəbər • {lastInfo[0].created_at.split('T')[0] } {lastInfo[0].created_at.split('T')[1].slice(0,5)} tarixində  yükləndi </p>
+                        <h1>{lastInfo[0].title}</h1>
                     </div>
                     
                 </div>
 
                 <div className="news-content__last">
-                    <div className="news-content__last__card"  onClick={() => props.history.push(`/esas/45`)}>
+                    {allInfo && allInfo.map( news => (
+
+                    <div className="news-content__last__card"  onClick={() => props.history.push(`/esas/${news.slug}`)}>
+                    
+                    <div className="news-content__last__card__view">
+                        <p>{news.view}</p>
+                    </div>
                     
                     <div className="news-content__last__card__image">
-                        <img src={newsimage2} alt='test' />
+                        <img src={news.image} alt='test' />
                     </div>
                     
                     <div className="news-content__last__card__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
+                        <p>Xəbər • {news.created_at.split('T')[0] } {news.created_at.split('T')[1].slice(0,5)} tarixində yükləndi </p>
+                        <h1>{news.title}</h1>
                     </div>
                     </div>
-                    <div className="news-content__last__card"  onClick={() => props.history.push(`/esas/45`)}>
-                    
-                    <div className="news-content__last__card__image">
-                        <img src={newsimage2} alt='test' />
-                    </div>
-                    
-                    <div className="news-content__last__card__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
-                    </div>
-                    </div>
-                    <div className="news-content__last__card">
-                    
-                    <div className="news-content__last__card__image">
-                        <img src={newsimage2} alt='test' />
-                    </div>
-                    
-                    <div className="news-content__last__card__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
-                    </div>
-                    </div>
-                    <div className="news-content__last__card">
-                    
-                    <div className="news-content__last__card__image">
-                        <img src={newsimage2} alt='test' />
-                    </div>
-                    
-                    <div className="news-content__last__card__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
-                    </div>
-                    </div>
-                    <div className="news-content__last__card">
-                    
-                    <div className="news-content__last__card__image">
-                        <img src={newsimage2} alt='test' />
-                    </div>
-                    
-                    <div className="news-content__last__card__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
-                    </div>
-                    </div>
-                    <div className="news-content__last__card">
-                    
-                    <div className="news-content__last__card__image">
-                        <img src={newsimage2} alt='test' />
-                    </div>
-                    
-                    <div className="news-content__last__card__info">
-                        <p>Xəbər • 14 dəqiqə əvvəl  </p>
-                        <h1>Opel Manta GSe ElektroMOD — смесь классики и технологий</h1>
-                    </div>
-                    </div>
-                    
+                    ))}
+               
                 </div>
             </div>
         </Layout>
