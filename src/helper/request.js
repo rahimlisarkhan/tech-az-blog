@@ -2,8 +2,8 @@ import axios from "axios";
 import {url} from './url';
 
 //GET REQUEST
-export async function getData(api = null,data, token = null) {
-  const res = await axios.get(`${url}${api}`, {
+export async function getData(params = null,data, token = null) {
+  const res = await axios.get(`${url}${params}`, {
     headers: {
       // "Content-Type": "application/json",
       // "Access-Control-Allow-Origin": "*",
@@ -20,9 +20,9 @@ export async function getData(api = null,data, token = null) {
 }
 
 //POST REQUEST
-export async function postData(api = null, data, token = null) {
+export async function postData(params = null, data, token = null) {
 
-  const res = await axios.post(`${url}${api}`, data, {
+  const res = await axios.post(`${url}${params}`, data, {
     headers: {
       // "Content-Type": "application/json",
       // "Access-Control-Allow-Origin": "*",
@@ -39,8 +39,8 @@ export async function postData(api = null, data, token = null) {
 }
 
 //PUT REQUEST
-export async function putData(api = null, data, token = null) {
-  const res = await axios.put(`${url}${api}`, data, {
+export async function putData(params = null, data, token = null) {
+  const res = await axios.put(`${url}${params}`, data, {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
@@ -60,8 +60,8 @@ export async function putData(api = null, data, token = null) {
 
 
 //Delete REQUEST
-export async function deleteData(api = null, data, token = null) {
-  const res = await axios.delete(`${url}${api}`, data, {
+export async function deleteData(params = null, data, token = null) {
+  const res = await axios.delete(`${url}${params}`, data, {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",

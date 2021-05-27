@@ -5,7 +5,7 @@ import {deleteData, getData, postData,putData } from "../helper/request";
 //AUTH--start
 export async function register(data){
   try {
-    const response = await postData(`user/register/`,data)
+    const response = await postData(`register/`,data)
     toast.success(`Qeydiyyatdan ugurla keçdiniz!`)
     localStorage.setItem('token',response.data.data.access_token)
 
@@ -34,9 +34,10 @@ export async function login(data){
 //AUTH--end
 
 
-export async function getAllNews(){
+export async function getAllNews(params,data){
+
   try {
-    const response = await getData(`mixdata/`,{})
+    const response = await getData(params,data)
 
     return response
  }catch (error) {

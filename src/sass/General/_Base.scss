@@ -25,14 +25,14 @@ body {
 
 //Scroll bar
 ::-webkit-scrollbar {
-    width: .5rem;
+    width: .3rem;
     @include respond(phone){
         display: none;
     }
 }
 
 ::-webkit-scrollbar-track {
-    background:rgb(255, 255, 255);
+    background:rgb(17,18,20);
     ;
 
     @include respond(phone){

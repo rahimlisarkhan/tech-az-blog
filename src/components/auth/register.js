@@ -13,12 +13,14 @@ let RegisterPopup = (props) => {
   //Hooks for Form
   const [formData, setFormData] = useState({});
 
-  useEffect(()=>{
-    setDisabled(false)
-  },[stores.userStore.registerUser,stores.userStore.userInfo])
+  useEffect(() =>{
+    setRegisterPopup()
+  },[stores.userStore.loginPanel])
 
 
-
+  useEffect(() => {
+    setDisabled(false);
+  }, [stores.userStore.userRegisterValidate, stores.userStore.userInfo]);
 
   const handleChange = ({ target: { name, value } }) => {
     setFormData({ ...formData, [name]: value });
@@ -28,13 +30,17 @@ let RegisterPopup = (props) => {
     e.preventDefault();
 
     const formdata = new FormData();
-    formdata.append('email',formData.email);
-    
+    formdata.append("first_name", formData.email);
+    formdata.append("last_name", formData.email);
+    formdata.append("username", formData.email);
+    formdata.append("email", formData.email);
+    formdata.append("password", formData.email);
+    formdata.append("password2", formData.email);
+
     // formData.append('action', 'previewImg');
     stores.userStore.register(formdata);
 
     // setDisabled(!disableBtn)
-
   };
 
   //props
@@ -50,12 +56,11 @@ let RegisterPopup = (props) => {
         <form onSubmit={handleSubmit}>
           <div
             className={
-              // stores.userStore.registerUser
-              //   ? stores.userStore.registerUser.data.name
-              //     ? "input-group error-border"
-              //     : "input-group success-border"
-              //   : 
-                "input-group"
+              stores.userStore.userRegisterValidate
+                ? stores.userStore.userRegisterValidate.first_name
+                  ? "input-group error-border"
+                  : "input-group success-border"
+                : "input-group"
             }
           >
             <input
@@ -65,20 +70,19 @@ let RegisterPopup = (props) => {
               onChange={handleChange}
               value={formData.name}
             />
-            {/* {stores.userStore.registerUser && (
+            {stores.userStore.userRegisterValidate && (
               <p className="error-message">
-                {stores.userStore.registerUser.data.name}
+                {stores.userStore.userRegisterValidate.first_name}
               </p>
-            )} */}
+            )}
           </div>
           <div
             className={
-              // stores.userStore.registerUser
-              //   ? stores.userStore.registerUser.data.name
-              //     ? "input-group error-border"
-              //     : "input-group success-border"
-              //   : 
-                "input-group"
+              stores.userStore.userRegisterValidate
+                ? stores.userStore.userRegisterValidate.last_name
+                  ? "input-group error-border"
+                  : "input-group success-border"
+                : "input-group"
             }
           >
             <input
@@ -88,46 +92,65 @@ let RegisterPopup = (props) => {
               onChange={handleChange}
               value={formData.name}
             />
-            {/* {stores.userStore.registerUser && (
+            {stores.userStore.userRegisterValidate && (
               <p className="error-message">
-                {stores.userStore.registerUser.data.name}
+                {stores.userStore.userRegisterValidate.last_name}
               </p>
-            )} */}
+            )}
           </div>
-       
           <div
             className={
-              // stores.userStore.registerUser
-              //   ? stores.userStore.registerUser.data.phone
-              //     ? "input-group error-border"
-              //     : "input-group success-border"
-              //   : 
-                "input-group"
+              stores.userStore.userRegisterValidate
+                ? stores.userStore.userRegisterValidate.username
+                  ? "input-group error-border"
+                  : "input-group success-border"
+                : "input-group"
             }
           >
             <input
-              type='email'
-              name='email'
-              placeholder='email'
+              type="text"
+              placeholder="Nick adı"
+              name="username"
+              onChange={handleChange}
+              value={formData.username}
+            />
+            {stores.userStore.userRegisterValidate && (
+              <p className="error-message">
+                {stores.userStore.userRegisterValidate.username}
+              </p>
+            )}
+          </div>
+
+          <div
+            className={
+              stores.userStore.userRegisterValidate
+                ? stores.userStore.userRegisterValidate.email
+                  ? "input-group error-border"
+                  : "input-group success-border"
+                : "input-group"
+            }
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
               onChange={handleChange}
               value={formData.email}
             />
 
-            {/* {stores.userStore.registerUser && (
+            {stores.userStore.userRegisterValidate && (
               <p className="error-message">
-                {stores.userStore.registerUser.data.phone}
+                {stores.userStore.userRegisterValidate.email}
               </p>
-            )} */}
+            )}
           </div>
           <div
             className={
-              // stores.userStore.registerUser
-              //   ? stores.userStore.registerUser.data.password
-              //     ? "input-group error-border"
-              //     : "input-group success-border"
-              //   : 
-                
-                "input-group"
+              stores.userStore.userRegisterValidate
+                ? stores.userStore.userRegisterValidate.password
+                  ? "input-group error-border"
+                  : "input-group success-border"
+                : "input-group"
             }
           >
             <input
@@ -140,21 +163,19 @@ let RegisterPopup = (props) => {
             <span onClick={() => setPasswordShow(!passwordShow)}>
               {!passwordShow ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </span>
-            {/* {stores.userStore.registerUser && (
+            {stores.userStore.userRegisterValidate && (
               <p className="error-message">
-                {stores.userStore.registerUser.data.password}
+                {stores.userStore.userRegisterValidate.password}
               </p>
-            )} */}
+            )}
           </div>
           <div
             className={
-              // stores.userStore.registerUser
-              //   ? stores.userStore.registerUser.data.password
-              //     ? "input-group error-border"
-              //     : "input-group success-border"
-              //   : 
-                
-                "input-group"
+              stores.userStore.userRegisterValidate
+                ? stores.userStore.userRegisterValidate.password2
+                  ? "input-group error-border"
+                  : "input-group success-border"
+                : "input-group"
             }
           >
             <input
@@ -162,17 +183,16 @@ let RegisterPopup = (props) => {
               name="password_confirmation"
               onChange={handleChange}
               placeholder="Şifrənizin təkrarı"
-
               value={formData.password2}
             />
             <span onClick={() => setPasswordShow2(!passwordShow2)}>
               {!passwordShow2 ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </span>
-            {/* {stores.userStore.registerUser && (
+            {stores.userStore.userRegisterValidate && (
               <p className="error-message">
-                {stores.userStore.registerUser.data.password}
+                {stores.userStore.userRegisterValidate.password2}
               </p>
-            )} */}
+            )}
           </div>
           {/* <div className="group-checkbox">
             <label className="checkbox">
@@ -186,8 +206,8 @@ let RegisterPopup = (props) => {
                 <span
                   className="checkbox__control checkbox-error"
                   className={
-                    stores.userStore.registerUser
-                      ? stores.userStore.registerUser.data.user_terms
+                    stores.userStore.userRegisterValidate
+                      ? stores.userStore.userRegisterValidate.user_terms
                         ? "checkbox__control checkbox-error"
                         : "checkbox__control success-checkbox"
                       : "checkbox__control"
@@ -209,19 +229,27 @@ let RegisterPopup = (props) => {
               </span>
               <span className="radio__label"> Raziyam</span>
             </label>
-            {stores.userStore.registerUser && (
+            {stores.userStore.userRegisterValidate && (
               <p className="error-userterms">
-                {stores.userStore.registerUser.data.user_terms}
+                {stores.userStore.userRegisterValidate.user_terms}
               </p>
             )}
           </div> */}
-          <button type='submit' disabled={disableBtn}>Qeydiyyatdan keç</button>
+          <button type="submit" disabled={disableBtn}>
+            Qeydiyyatdan keç
+          </button>
           <p className="form-info">
             Hesabın vardırsa <a onClick={() => setRegisterPopup()}>Daxil ol</a>
           </p>
         </form>
       </div>
-      <button className="form-close" onClick={() => setOpenCloseAuth(false)}>
+      <button
+        className="form-close"
+        onClick={() => {
+          setOpenCloseAuth(false);
+          stores.userStore.setRegister(null);
+        }}
+      >
         <i>
           <svg
             id="fi_2089650"

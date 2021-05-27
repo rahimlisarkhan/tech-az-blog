@@ -1,4 +1,4 @@
-.login-popup{
+.login-popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,24 +10,23 @@
     background-color: rgba(42, 42, 42, 0.787);
     z-index: 99999999999999;
 
-    @include respond(phone){
+    @include respond(phone) {
         background-color: transparent;
     }
 
 
-    &__content{
+    &__content {
         position: relative;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        border-radius: 1rem;
         width: 66.4rem;
         height: 64rem;
-        padding:2rem 5rem;
+        padding: 2rem 5rem;
         border: .2rem solid $color-bg-green;
-        background-color: rgb(41,42,44);
-        
-        @include respond(phone){
+        background-color: rgb(41, 42, 44);
+
+        @include respond(phone) {
             width: 100%;
             position: absolute;
             top: 0;
@@ -36,99 +35,106 @@
             height: 100%;
             margin-top: 7.4rem;
             border-radius: 0;
-            padding:3rem;
+            padding: 3rem;
         }
-    
 
 
-        &__header{
+
+        &__header {
             display: flex;
             align-items: center;
             justify-content: space-evenly;
             font-size: 2.6rem;
-            font-weight: 400 ;
+            font-weight: 400;
 
-            @include respond(phone){
+            @include respond(phone) {
                 font-size: 1.6rem;
-                color:white ;
+                color: white;
             }
-            button{  
+
+            button {
                 width: 50%;
                 text-align: center;
                 background-color: transparent;
                 border: none;
                 padding: 1.5rem 0;
                 font-weight: 400;
-                color:white ;
+                color: white;
 
 
-                @include respond(phone){
+                @include respond(phone) {
                     font-size: 1.6rem;
-                    color:white ;
-    
+                    color: white;
+
                 }
             }
         }
 
-        &__form{
-            .input-group{
+        &__form {
+            .input-group {
                 position: relative;
-                margin-bottom: 1rem ;
-                height: 6rem;
-                background-color:$color-text-dark !important;
+                margin-bottom: 2.2rem;
+                height: 4.3rem;
 
-                &:first-child{
-                    margin-top: 1rem ;
+                background-color: $color-text-dark !important;
+
+                &:first-child {
+                    margin-top: 1rem;
 
                 }
 
-                svg{
+                svg {
                     position: absolute;
                     cursor: pointer;
                     top: 20%;
                     right: 2%;
                     font-size: 3rem;
 
-                    @include respond(phone){
+                    @include respond(phone) {
                         font-size: 2.5rem;
                     }
-                    &:hover{
+
+                    &:hover {
                         color: $color-bg-green-hover;
                     }
                 }
             }
-            input{
+
+            input {
                 width: 100%;
                 padding: 1rem 2.2rem;
                 font-size: 2rem;
                 font-weight: 400;
                 color: $color-bg-green;
-                height: 6rem;
+                height: 100%;
                 border: none;
                 background-color: transparent;
                 outline: none;
-                
 
-                @include respond(phone){
-                font-size: 1.6rem;
-                height: 6rem;
+
+                @include respond(phone) {
+                    font-size: 1.6rem;
+                    height: 6rem;
                 }
-                &:not(:last-child){
+
+                &:not(:last-child) {
                     margin-bottom: 2rem;
                 }
 
-                &:focus{
+                &:focus {
                     outline: .1rem solid $color-bg-green;
                 }
 
-                &::placeholder{
+                &::placeholder {
                     color: #b1b1b1;
                 }
             }
+
             height: 50rem;
 
-            .group-checkbox{
-                margin:1rem 0 3rem 0;
+            .group-checkbox {
+                margin: 1rem 0 3rem 0;
+
                 .checkbox {
                     display: grid;
                     grid-template-columns: min-content auto;
@@ -136,75 +142,84 @@
                     font-size: 2rem;
                     align-items: center;
                     color: $color-bg-green;
-                  }
-                  .checkbox__input {
+                }
+
+                .checkbox__input {
                     display: grid;
                     grid-template-areas: "checkbox";
 
-                    > * {
-                      grid-area: checkbox;
+                    >* {
+                        grid-area: checkbox;
                     }
+
                     input {
-                      opacity: 0;
-                      width: 1em;
-                      height: 1em;
+                        opacity: 0;
+                        width: 1em;
+                        height: 1em;
 
 
-                      &:checked + .checkbox__control svg {
-                        transform: scale(1);
-                      }
+                        &:checked+.checkbox__control svg {
+                            transform: scale(1);
+                        }
                     }
-                  }
-                  .checkbox__control {
+                }
+
+                .checkbox__control {
                     display: inline-grid;
                     width: 4rem;
                     height: 4rem;
                     border-radius: 0.25em;
-                    background-color:$color-text-dark ;
+                    background-color: $color-text-dark;
 
                     svg {
                         transition: transform 0.1s ease-in 25ms;
                         transform: scale(0);
                         transform-origin: bottom left;
-                      }
-                  }
-                 
-                  .radio__label{
-                      color: $color-bg-white;
-                  }
+                    }
+                }
+
+                .radio__label {
+                    color: $color-bg-white;
+                }
             }
 
-            button{
+            button {
                 width: 100%;
-                height: 6rem;
-                background-color: $color-bg-green;
-                border-radius: 1rem;
+                height: 5.5rem;
+                border: .3rem solid $color-bg-green;
                 font-size: 2.2rem;
-                border: none;
-                color: white;
-                @include respond(phone){
+                background: transparent;
+                color: $color-bg-green;
+                margin-top: .7rem;
+
+                @include respond(phone) {
                     font-size: 1.6rem;
                     height: 6rem;
-                    }
-                &:hover{
-                background-color: $color-bg-green-hover;
+                }
+
+                &:hover {
+                    color: white;
+                    background-color: $color-bg-green-hover;
+                    border: none;
 
                 }
 
-                &:disabled{
-                    background-color:rgb(170, 170, 170) ;
+                &:disabled {
+                    background-color: rgb(170, 170, 170);
                 }
             }
 
-            .form-info{
-                margin-top: 1.5rem !important;
-                font-size: 1.8rem;
+            .form-info {
+                margin-top: 1rem !important;
+                font-size: 1.6rem;
                 font-weight: 300;
                 color: rgb(245, 245, 245);
-                @include respond(phone){
+
+                @include respond(phone) {
                     font-size: 1.4rem;
-                    }
-                a{
+                }
+
+                a {
                     cursor: pointer;
                     color: $color-bg-green-hover;
                     text-decoration: none;
@@ -212,8 +227,8 @@
                 }
             }
         }
-    
-        .form-close{
+
+        .form-close {
             position: absolute;
             top: 4%;
             right: 3%;
@@ -221,90 +236,91 @@
             border: none;
             outline: none;
             background-color: transparent;
-            svg{
+
+            svg {
                 color: white !important;
                 filter: brightness(0) invert(1);
-            width: 2rem !important;
+                width: 2rem !important;
 
             }
 
-            @include respond(phone){
-            top: 1%;
-            right: 2%;
-                 svg{
+            @include respond(phone) {
+                top: 1%;
+                right: 2%;
+
+                svg {
                     width: 1.5rem;
-                 }
+                }
             }
         }
     }
 
- 
+
 }
 
 
-.auth-active{
+.auth-active {
     text-decoration: none;
     color: $color-bg-green !important;
     border-bottom: .1rem solid $color-bg-green !important;
 
-    @include respond(phone){
-    color: $color-bg-green !important ;
-        
+    @include respond(phone) {
+        color: $color-bg-green !important;
+
     }
 }
 
 //Error message
-.error-message{
+.error-message {
     position: absolute;
-    bottom: -3%;
-    left: 1%;
-    font-size:1.4rem ;
-    color: red;
-}
-.error-userterms{
-    position: absolute;
-    bottom: 20.5%;
-    left: 8.5%;
-    font-size:1.4rem ;
+    bottom: -36%;
+    left: 0.5%;
+    font-size: 1.2rem;
     color: red;
 }
 
-.error-border{
-    input{
+.error-userterms {
+    position: absolute;
+    bottom: 20.5%;
+    left: 8.5%;
+    font-size: 1.4rem;
+    color: red;
+}
+
+.error-border {
+    input {
         border: .1rem solid red;
     }
 }
 
 
-.error-message_chekout{
+.error-message_chekout {
     position: absolute;
     bottom: -20%;
     left: 1%;
-    font-size:1.4rem ;
+    font-size: 1.4rem;
     color: red;
     text-transform: lowercase;
 }
-.success-checkbox{
+
+.success-checkbox {
     border: .1rem solid $color-bg-green-hover;
 
 }
 
-.success-border{
-    input{
+.success-border {
+    input {
         border: .1rem solid $color-bg-green;
     }
 }
 
-.form_height{
+.form_height {
     padding-top: 13.1rem;
     height: 54.5rem;
     z-index: 120;
 
-    button{
+    button {
         top: 3%;
 
     }
 }
-
-
-

@@ -23,12 +23,13 @@ class UserInfo {
         const res = await api.register(data);
         console.log(res);
 
-        if (res.status === 400) {
+        if (res && res.status === 400) {
             this.setRegister(res.data);
         } else {
             // this.setToken(res.data.data.access_token);
             // localStorage.setItem('techaz', res.data.data.access_token)
-            this.setRegister(null)
+            // this.setRegister(null)
+            console.log(res);
         }
     }
 

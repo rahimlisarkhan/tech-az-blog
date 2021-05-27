@@ -1,12 +1,12 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 import '../src/sass/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HomePageContainer from './pages/esas/HomePageContainer';
-import NewsForIDContainer from './pages/esas/NewsForIDContainer';
-import AboutPageContainer from './pages/haqqimizda/AboutPageContainer';
-import VideoPageContainer from './pages/videolar/VideoPageContainer';
-import NewsPageContainer from './pages/xeberler/NewsPageContainer';
-import ArticlePageContainer from './pages/meqaleler/ArticlePageContainer';
+import HomePageContainer from './pages/home/HomePageContainer';
+import NewsForIDContainer from './pages/home/NewsForIDContainer';
+import AboutPageContainer from './pages/about/AboutPageContainer';
+import VideoPageContainer from './pages/video/VideoPageContainer';
+import NewsPageContainer from './pages/news/NewsPageContainer';
+import ArticlePageContainer from './pages/article/ArticlePageContainer';
 
 
 const App = () => {
