@@ -14,7 +14,7 @@ let RegisterPopup = (props) => {
   const [formData, setFormData] = useState({});
 
   useEffect(() =>{
-    setRegisterPopup()
+    stores.userStore.loginPanel && setRegisterPopup()
   },[stores.userStore.loginPanel])
 
 
@@ -29,13 +29,15 @@ let RegisterPopup = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    console.log(formData);
+
     const formdata = new FormData();
-    formdata.append("first_name", formData.email);
-    formdata.append("last_name", formData.email);
-    formdata.append("username", formData.email);
+    formdata.append("first_name", formData.first_name);
+    formdata.append("last_name", formData.last_name);
+    formdata.append("username", formData.username);
     formdata.append("email", formData.email);
-    formdata.append("password", formData.email);
-    formdata.append("password2", formData.email);
+    formdata.append("password", formData.password);
+    formdata.append("password2", formData.password2);
 
     // formData.append('action', 'previewImg');
     stores.userStore.register(formdata);
@@ -68,7 +70,7 @@ let RegisterPopup = (props) => {
               placeholder="Adınızı daxil edin"
               name="first_name"
               onChange={handleChange}
-              value={formData.name}
+              value={formData.name ? formData.name : ''}
             />
             {stores.userStore.userRegisterValidate && (
               <p className="error-message">
@@ -112,7 +114,8 @@ let RegisterPopup = (props) => {
               placeholder="Nick adı"
               name="username"
               onChange={handleChange}
-              value={formData.username}
+              value={formData.username ? formData.username : ''}
+
             />
             {stores.userStore.userRegisterValidate && (
               <p className="error-message">
@@ -135,7 +138,8 @@ let RegisterPopup = (props) => {
               name="email"
               placeholder="email"
               onChange={handleChange}
-              value={formData.email}
+              value={formData.email ? formData.email : ''}
+
             />
 
             {stores.userStore.userRegisterValidate && (
@@ -158,7 +162,8 @@ let RegisterPopup = (props) => {
               name="password"
               placeholder="Şifrəniz"
               onChange={handleChange}
-              value={formData.password}
+              value={formData.password ? formData.password : ''}
+
             />
             <span onClick={() => setPasswordShow(!passwordShow)}>
               {!passwordShow ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
@@ -180,10 +185,11 @@ let RegisterPopup = (props) => {
           >
             <input
               type={!passwordShow2 ? "password" : "text"}
-              name="password_confirmation"
+              name="password2"
               onChange={handleChange}
               placeholder="Şifrənizin təkrarı"
-              value={formData.password2}
+              value={formData.password2 ? formData.password2 : ''}
+
             />
             <span onClick={() => setPasswordShow2(!passwordShow2)}>
               {!passwordShow2 ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}

@@ -44,7 +44,7 @@ const NewsPageContainer = (props) => {
                 <div className="news-content__last">
                     {allInfo && allInfo.map( news => (
 
-                    <div className="news-content__last__card"  onClick={() => props.history.push(`/esas/${news.slug}`)}>
+                    <div className="news-content__last__card" key={news.slug}  onClick={() => props.history.push(`/esas/${news.slug}`)}>
                     
                     <div className="news-content__last__card__view">
                         <p>{news.view}</p>

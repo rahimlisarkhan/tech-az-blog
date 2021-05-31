@@ -12,18 +12,25 @@ let LoginPopup = (props) => {
   const [disableBtn, setDisabled] = useState(false);
 
   //props
-  const { setOpenCloseAuth, setRegisterPopup, getLoginAuth } = props;
+  const { setOpenCloseAuth, setRegisterPopup } = props;
 
   useEffect(() => {
-    setDisabled(false);
+    // setDisabled(false);
   }, [stores.userStore.userAuth, stores.userStore.userInfo]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = { phone: handlerNumber, password: handlerPassword };
+    const formData = { username: handlerNumber, password: handlerPassword };
 
-    stores.userStore.login(formData);
-    setDisabled(!disableBtn);
+    const formdata = new FormData()
+
+    formdata.append('username',formData.username )
+    formdata.append('password',formData.password )
+
+
+    console.log(formData);
+    stores.userStore.login(formdata);
+    // setDisabled(!disableBtn);
   };
 
   return (
@@ -37,59 +44,61 @@ let LoginPopup = (props) => {
           <div className="login-popup__content__form">
             <div
               className={
-                stores.userStore.userAuth
-                  ? stores.userStore.userAuth.data.phone
-                    ? "input-group error-border"
-                    : "input-group success-border"
-                  : "input-group"
+                // stores.userStore.userAuth
+                //   ? stores.userStore.userAuth.data.username
+                //     ? "input-group error-border"
+                //     : "input-group success-border"
+                  // : 
+                  "input-group"
               }
             >
               <input
-                value={handlerNumber}
+                value={handlerNumber ? handlerNumber : ''}
                 onChange={(e) => setHandlerNumber(e.target.value)}
               />
 
-              {stores.userStore.userAuth && (
+              {/* {stores.userStore.userAuth && (
                 <p className="error-message">
-                  {stores.userStore.userAuth.data.phone}
+                  {stores.userStore.userAuth.data.username}
                 </p>
-              )}
+              )} */}
             </div>
             <div
               className={
-                stores.userStore.userAuth
-                  ? stores.userStore.userAuth.data.password
-                    ? "input-group error-border"
-                    : "input-group success-border"
-                  : "input-group"
+                // stores.userStore.userAuth
+                //   ? stores.userStore.userAuth.data.password
+                //     ? "input-group error-border"
+                //     : "input-group success-border"
+                //   : 
+                  "input-group"
               }
             >
               <input
                 type={!passwordShow ? "password" : "text"}
                 name="password"
                 placeholder="Şifrə"
-                value={handlerPassword}
+                value={handlerPassword ? handlerPassword :''}
                 onChange={(e) => setHandlerPassword(e.target.value)}
               />
               <span onClick={() => setPasswordShow(!passwordShow)}>
                 {!passwordShow ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
               </span>
-              {stores.userStore.userAuth && (
+              {/* {stores.userStore.userAuth && (
                 <p className="error-message">
                   {stores.userStore.userAuth.data.password}
                 </p>
-              )}
+              )} */}
             </div>
 
             {/* {props.auth.authResult === "login_error" && (
             <p className="login_error">Məlumatların düzgünlüyünü yoxlayın.</p>
           )} */}
             <button type="submit" disabled={disableBtn}>
-              {" "}
+              
               Daxil ol
             </button>
             <p className="form-info">
-              Hesabın yoxdursa{" "}
+              Hesabın yoxdursa
               <a onClick={() => setRegisterPopup()}>Qeydiyyatdan keç</a>
             </p>
           </div>

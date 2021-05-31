@@ -9,7 +9,7 @@ export async function getData(params = null,data, token = null) {
       // "Access-Control-Allow-Origin": "*",
       // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
       // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length",
-      Authorization: token && `Bearer ${token}`,
+      Authorization: token && `Token ${token}`,
     },
     params:data
   });
@@ -24,11 +24,8 @@ export async function postData(params = null, data, token = null) {
 
   const res = await axios.post(`${url}${params}`, data, {
     headers: {
-      // "Content-Type": "application/json",
-      // "Access-Control-Allow-Origin": "*",
-      // "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-      // "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length",
-    
+      "Content-Type": "application/json",
+      "Accept": "application/json",
       Authorization: token && `Bearer ${token}`,
     },
   });

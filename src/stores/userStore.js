@@ -10,49 +10,57 @@ class UserInfo {
     userInfo = null;
     userRegisterValidate = null;
     userLoginValidate = null;
-
+    loginPanel=null
 
     constructor() {
         makeAutoObservable(this);
     }
 
-
     //API REQUEST
     //AUTH
     async register(data) {
         const res = await api.register(data);
-        console.log(res);
 
         if (res && res.status === 400) {
+
             this.setRegister(res.data);
-        } else {
+        } else if (res && res.status === 201) {
+            this.setOpenClosePanel(true)
             // this.setToken(res.data.data.access_token);
             // localStorage.setItem('techaz', res.data.data.access_token)
             // this.setRegister(null)
-            console.log(res);
         }
     }
 
     async login(data) {
         const res = await api.login(data);
 
-        // if (res.ok) {
-        //     // this.setToken(res.data.data.access_token);
-        //     // localStorage.setItem('token', res.data.data.access_token)
-        //     // this.setLogin(null)
+        if (res && res.status === 400) {
 
-        // } else {
-        //     this.setLogin(res.data);
-        // }
+            this.setLogin(res.data);
+        } else if (res && res.status === 200) {
+            localStorage.setItem('techaz',res.data.data.token)
+            this.setRegister(null)
+            this.setToken(res.data.data.token)
+            this.setUser(res.data.data)
+        }
+        
     }
 
 
+    async getUser(params,data,token) {
+        const res = await api.getUser(params,data,token);
+        this.setUser(res)
+    }
 
 
     //Actions
     //Auth--
     setRegister(data) {
         this.userRegisterValidate = data
+    }
+    setOpenClosePanel(bool) {
+        this.loginPanel = bool
     }
     setLogin(data) {
         this.userLoginValidate = data;
