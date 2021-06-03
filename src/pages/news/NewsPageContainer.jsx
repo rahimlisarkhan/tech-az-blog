@@ -1,5 +1,6 @@
 
 import Layout from "../../components/layout/Layout"
+import image from '../../img/neüs-image.jpg'
 import stores from "../../stores"
 import { useEffect, useState } from "react";
 import Loading from "../../components/ui/loading";
@@ -31,7 +32,12 @@ const NewsPageContainer = (props) => {
            <div className="news-content">
                 <div className="news-content__trend" onClick={() => props.history.push(`/esas/${lastInfo[0].slug}`)}>
                     <div className="news-content__trend__image">
-                        <img src={lastInfo[0].image} alt='test' />
+                        {/* <img src={lastInfo[0].image} alt='test' /> */}
+
+                        <img src={image} alt='test' />
+
+
+                        
                     </div>
                     
                     <div className="news-content__trend__info">
@@ -51,7 +57,9 @@ const NewsPageContainer = (props) => {
                     </div>
                     
                     <div className="news-content__last__card__image">
-                        <img src={news.image} alt='test' />
+                        {/* <img src={news.image} alt='test' /> */}
+                        <img src={image} alt='test' />
+
                     </div>
                     
                     <div className="news-content__last__card__info">

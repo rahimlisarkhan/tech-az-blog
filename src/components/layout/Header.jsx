@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import logo from "../../img/Artboard 2.png";
 import stores from "../../stores/";
-import { withRouter } from "react-router";
+import { Router, withRouter } from "react-router";
 import { useEffect, useState } from "react";
 import Auth from "../auth/auth";
 import { AiOutlineUser } from "react-icons/ai";
@@ -87,19 +87,19 @@ const Header = (props) => {
                 }
               >
                 <ul>
-                  <li>
+                  <li  onClick={() => props.history.push("/hesabim")}>
                     <i>
                       <AiOutlineUser />
                     </i>
                     hesabım
                   </li>
-                  <li>
+                  <li  onClick={() => props.history.push("/meqale-paylas")}>
                     <i>
                       <BsPlusCircle />
                     </i>
                     məqalə paylaş
                   </li>
-                  <li>
+                  <li >
                     <i>
                       <IoExitOutline />
                     </i>

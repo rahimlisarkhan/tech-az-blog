@@ -15,11 +15,12 @@ html {
 }
 
 body {
-    background-image:url("../../img/icons\ _\ graphics/Asset 1.png")
-    ,url("../../img/icons\ _\ graphics/Asset 2.png"),linear-gradient($color-black 65%,$color-black 20% ) ;
+    background-image:url("../../img/icons\ _\ graphics/Asset 1.png") ,linear-gradient($color-black 85%,$color-black 20% ) ;
+    font-family: $fontPopipns;
     background-repeat: repeat-y, repeat-y;
     background-position: left,right;
-    font-family: $fontPopipns;
+
+
 }
 
 

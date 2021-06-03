@@ -8,11 +8,11 @@
         border-radius: 1rem;
         height: 46.8rem;
         position: relative;
-        box-shadow: 0 .1rem 1rem .5rem rgba(255, 255, 255, 0.151);
+        // box-shadow: 0 .1rem 1rem .5rem rgba(255, 255, 255, 0.151);
         cursor: pointer;
         &:hover {
             transform: scale(.98);
-            box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.192);
+            box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.096);
         }
 
         &__image {
@@ -32,22 +32,23 @@
             height: 100%;
             border-radius: 1rem;
 
-            background: linear-gradient(rgba(3, 3, 3, 0.308), #bbff298f 80%);
+            background: linear-gradient(rgba(3, 3, 3, 0.308) 50%, #000000d2 80%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 3rem;
-            color: white;
+            color: #ffffff;
 
             h1 {
                 font-size: 3rem;
                 font-weight: bold;
-                text-shadow: 0 .1rem .3rem .2rem rgba(0, 0, 0, 0.26)
+            color: #bdfa2b;
+
             }
 
             p {
                 font-size: 1.4rem;
-                text-shadow: 0 .1rem .3rem .2rem rgba(0, 0, 0, 0.377)
+               
             }
         }
 
@@ -63,14 +64,14 @@
             width: 58.5rem;
             height: 35rem;
             position: relative;
-            box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.041);
+            // box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.041);
             margin-bottom: 3rem;
             cursor: pointer;
             border-radius: 1rem;
 
             &:hover {
                 transform: scale(.97);
-                box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.192);
+                box-shadow: 0 .1rem .5rem .5rem rgba(255, 255, 255, 0.055);
             }
 
             &__info {
@@ -80,12 +81,17 @@
                 width: 100%;
                 height: 100%;
                 border-radius: 1rem;
-                background: linear-gradient(rgba(3, 3, 3, 0.308), #bbff298f 80%);
+            background: linear-gradient(rgba(3, 3, 3, 0.308) 50%, #000000d2 80%);
+
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
                 padding: 3rem;
                 color: white;
+
+            }
+            h1{
+            color: #bdfa2b;
 
             }
 

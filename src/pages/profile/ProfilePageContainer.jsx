@@ -92,9 +92,25 @@ const ProfilePageContainer = (props) => {
                       stores.userStore.userInfo.position ? stores.userStore.userInfo.position : 'iş yeri'}
                   </p>
                 </div>
+                <button className="profile-user-info__created">
+                Məlumatları dəyişdir
+              </button>
               </div>
+            
+             
             </div>
-            <div className="profile-content__profile__body__right"></div>
+            <div className="profile-content__profile__body__right">
+                  <div className="article-created-content">
+                  <div className="article-created-content__image">
+                    <span>SR</span>
+                  </div>
+                  <div className="article-created-content__btn">
+                    <button>
+                      Məqalə yaz...
+                    </button>
+                  </div>
+                  </div>
+            </div>
           </div>
         </div>
       </div>
