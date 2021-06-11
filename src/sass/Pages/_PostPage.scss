@@ -1,0 +1,268 @@
+.postpage{
+
+    &__content{
+
+        .postpage__post{
+            // MAIN NEWS TILL PICTURE
+            &__main{
+                    &__title{
+                        @include subtitles(4.3rem, 5.2rem, 700);
+                        font-family:$fontCrimson;
+                        color: #434549;
+                   }
+
+                   &__subtitle{
+                       width: 98%;
+                        @include subtitles(1.9rem, 2.9rem, 30);
+                        color: #434549; 
+                   }
+                   &__dating{
+                       display: flex;
+                       justify-content: space-between;
+                       align-items: center;
+                       .dating__title{
+                        margin-top: 1.7rem!important;
+                        @include subtitles(1.4rem, 2.2rem, 300);
+                        color:#D1A617;
+                        font-family: $fontPopipns;
+                        letter-spacing: .8rem; 
+                        margin-bottom: 1.6rem;
+                       }
+
+                       .dating__subtitle{
+                            display: flex;
+                            margin-right: 3.3rem!important;
+                            @include subtitles(1.4rem, 2.4rem, 300);
+                            color: #172854;
+                            .by{
+                                @include subtitles(1.4rem, 2.4rem, 300);
+                                color:#848689;
+                            }
+                            .date{
+                                margin-left: 4rem!important;
+                                color:#848689;
+                            }
+                        }
+                   }
+                   img{
+                    width: 85rem;
+                    height: 48rem;
+                   }
+
+
+            }
+            // ONLY NEWS
+            &__news{
+                .news{
+                    margin-top: 2.6rem;
+                    width: 98%;
+
+                    &__title{
+                        @include subtitles(2.5rem, 3rem,700);
+                        font-family:$fontCrimson;
+                        color: #434549;
+                    }
+                    &__subtitle{
+                        @include subtitles(1.6rem, 2.4rem,300);
+                        color: #434549;
+                    }
+                }
+                .president{
+                    width: 98%;
+                    display: flex;
+                    position: relative;
+                    margin-left: 7rem;
+                    &__dot{
+                        position: relative;
+                        top:2rem;
+                        left: -1rem;
+                    }
+                    &__word{
+
+                        margin-top: 3.4rem;
+                        .word{
+                            width: 80%;
+                            @include subtitles(2.9rem, 4rem, 400);
+                            font-family:$fontCrimson;
+                            background-color: #FDE428;
+
+                            color: #172854;
+                        }
+                        .him{
+                            @include subtitles(2.9rem, 4.9rem, 400);
+                            font-family:$fontCrimson;
+                            color: #434549;
+                        }
+                    }
+                }
+            }
+            // SHARING
+            &__sharing{
+                display: flex;
+                justify-content: space-between;
+                align-items:center;
+                width: 98%;
+                margin-top: 6.3rem;
+                .share{
+                    @include subtitles(2.5rem, 3rem,700);
+                    font-family: $fontCrimson;
+                    color:#434549;
+                }
+
+                .icons{
+                    display: flex;
+
+                    &__each{
+                        cursor: pointer;
+                        display: flex;
+                        flex-direction: column;
+                        align-items:center;
+                        @include subtitles(1.4rem, 2rem,300);
+                        span{
+                            margin-top: .7rem;
+                        }
+                        .fa-twitter, .fa-facebook-f,.fa-linkedin{
+                            font-size: 2.2rem;
+                        }
+                        &:hover{
+                            color:#172854;
+                        }
+                    }
+                    .bir,.iki{
+                        border-right: .1rem solid #E8E9EE;
+                        padding-right: 5rem!important;
+                        margin-right: 5rem!important;
+                    }
+                }
+            }
+            .line{
+                width: 98%;
+                margin:2.5rem 0 8rem;
+            }
+            // ARTICLES CARDS
+            &__articles{
+                margin-bottom: 10rem;
+                &__title{
+                    @include subtitles(2.5rem, 3rem,700);
+                    font-family: $fontCrimson;
+                    color:#434549;
+                    margin-bottom: 3rem!important;
+                }
+                &__card{
+                    cursor: pointer;
+                    width: 40rem;
+                    height: 55rem;
+                    transition: 0.3s;
+                    img{
+                        width: 40rem;
+                        height: 33rem;
+                    }
+                    &__info{
+                        padding-left: 2rem;
+                        .topic{
+                            margin-top: 2.6rem!important;
+                            @include subtitles(1.4rem, 2.2rem, 300);
+                            color:#D1A617;
+                            font-family: $fontPopipns;
+                            letter-spacing: .8rem;
+                        }
+                        .topicthird{
+                            letter-spacing: .2rem;
+                        }
+                        .title{
+                            margin-top: 1.2rem!important;
+                            @include subtitles(2.2rem, 3rem, 700);
+                            font-family: $fontCrimson;
+                            color:#434549;
+                        }
+                        .subtitle{
+                            margin-top: 1rem!important;
+                            @include subtitles(1.4rem, 2.2rem, 300);
+        
+                        }
+                    }
+                    &:hover{
+                            box-shadow: 0 1rem 1rem #bbb7b767;
+                    }
+                }
+            }
+        }
+            // SEARCH SIDE
+        .newspage__search{
+            width: 44rem;
+            height: 85rem;
+            background: #F3F5F7;
+            display: flex;
+            justify-content: center;
+            padding: 4rem 0;
+            .newspage__content__search{
+                width: 38rem;
+                height: 70rem;
+                &__input{
+                    position: relative;
+                    input{
+                        outline: none;
+                        width: 38rem;
+                        @include subtitles(1.6rem, 2.4rem, 400);
+                        padding: 1.4rem 0 1.6rem 2rem;
+                        border: .1rem solid rgba(23, 40, 84, 0.2);
+                    }
+                    .fa-search{
+                    position: absolute;
+                    top: -1%;
+                    right: 0%;
+                    font-size: 1.8rem;
+                    background-color:#FDE428;
+                    padding: 1.5rem;
+                    margin: .5rem;
+                }
+            }
+
+            .title__category,.title__tag{
+                margin-top: 4rem!important;
+                margin-bottom: 1.6rem!important;
+                @include subtitles(1.8rem, 2.7rem, 300);
+                font-family: $fontCrimson;
+            }
+
+            &__categories{                  
+                    li{
+                        @include subtitles(1.4rem, 2.4rem, 500);
+                        color: #172854;
+                        padding: 1.5rem 0 1.5rem 2rem;
+                        background-color:#fff;
+                        margin-bottom: .2rem;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        &:hover{
+                            background:#E8EBF0;
+                        }
+                    }
+            }
+            
+            &__tags{
+
+                &__ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    li{
+                        background-color:#fff;
+                        @include subtitles(1.4rem, 2.4rem, 300);
+                        padding: .9rem 1.4rem 1.1rem;
+                        margin-right: 1rem;
+                        margin-bottom: 1rem;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        &:hover{
+                            background-color: #E8EBF0;
+                            color: #434549;
+                         }
+                    }
+
+                }
+            }
+        }
+        
+        }
+    }
+}

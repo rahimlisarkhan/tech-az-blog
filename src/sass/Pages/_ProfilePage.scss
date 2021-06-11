@@ -162,6 +162,100 @@
             font-size: 1.7rem;
             background: $color-black-grey;
             color: $color-bg-white !important;
+
+            &:hover{
+                transform: scale(.99);
+                background:#4d4f50 ;
+            }
         }
+    }
+}
+
+
+.article-created-content-list{
+    margin-top: 3rem;
+    &__card{
+        margin-bottom: 3rem;
+        background: rgb(35,37,38);
+        border-radius: 1rem;
+        &__header{
+            display: flex;
+            padding:1rem 1rem .3rem 1rem;
+            text-transform: lowercase;
+            color: $color-bg-white;
+            &__image{
+                border-radius: 50%;
+                width: 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 4rem;
+                background: rgb(235,222,186);
+                color: white;
+                text-shadow: 0 .1rem .7rem rgba(0, 0, 0, 0.151);
+                margin-right: 1rem;
+                text-transform: uppercase;
+                
+                h1{
+                    font-size: 2rem !important;
+                }
+            }
+        }        
+        
+        &__body{
+            h1{
+                padding:.6rem 1.3rem !important;
+                font-size: 1.8rem;
+                text-transform: lowercase;
+                letter-spacing: .1rem;
+                color: $color-bg-white;
+            }
+            img{
+                width: 100%;
+            }
+        }
+
+        &__footer{
+            display: flex;
+            align-items: center;
+            margin-top: 1rem !important;
+            height: 5rem;
+            font-size: 1.5rem;
+            padding:1rem 1rem .3rem 1rem;
+            p{  width: 100%;
+                height: 3rem;
+                padding-top:.3rem !important;
+                color:$color-bg-white;
+                border-top: .1rem solid #3a3b3c;
+            }
+            svg{
+                font-size: 2rem;
+                color:$color-bg-white;
+            }
+        }
+    }
+}
+
+.empty-card{
+    height: 35rem;
+    background: rgb(35,37,38);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $color-bg-white;
+
+    &__image{
+        background: #393b3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 12rem;
+        height: 12rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1.2rem;
+        font-size: 8rem;
     }
 }

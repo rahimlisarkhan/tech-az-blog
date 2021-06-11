@@ -48,6 +48,13 @@
     font-weight: 500;
 }
 
+@mixin subtitles($fontSize,$fontLineHeight,$fontWeight){
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    line-height: $fontLineHeight;
+    color: #757687;
+}
+
 //RESPONSIVE DESIGN | MEDIA QUERY
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
