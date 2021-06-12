@@ -8,7 +8,7 @@ const Layout = (props) => {
     return(
         <Fragment>
         <Header/>
-        <main className='container'>
+        <main className='container-content'>
             <div className="content">
                     {props.children}
             </div>

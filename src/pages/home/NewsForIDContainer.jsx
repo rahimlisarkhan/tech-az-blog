@@ -1,12 +1,11 @@
 import Layout from "../../components/layout/Layout"
+import NewsPageSlug from "../../components/news/NewsPageSlug"
 
 const NewsForIDContainer = () => {
 
     return(
         <Layout>
-            <div className="news-for-id">
-                
-            </div>
+            <NewsPageSlug/>
         </Layout>
     )
 }

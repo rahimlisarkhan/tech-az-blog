@@ -130,6 +130,8 @@ const ProfilePageContainer = (props) => {
             </div>
           </div>
         </div>
+      
+      
       </div>
     </Layout>
   );
