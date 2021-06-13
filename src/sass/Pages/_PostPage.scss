@@ -47,6 +47,16 @@
             }
         }
     }
+
+    &__video{
+        background-color: red;
+        width: 97%;
+        margin-bottom: 2rem;
+        iframe{
+            width: 100%;
+            height: 45rem;
+        }
+    }
 }
 
 .news-product-content-list{
@@ -134,5 +144,7 @@
             width: 100%;
             border-radius: .5rem;
         }
+
+    
     }
 }

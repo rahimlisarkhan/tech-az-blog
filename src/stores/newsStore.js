@@ -6,6 +6,7 @@ import * as api from '../helper/api'
 class NewsStore {
 
     allNews = null
+    newsForSlug = null
     news = null
     videos = null
     articles = null
@@ -40,6 +41,12 @@ class NewsStore {
 
     }
 
+    async getNewsForSlug(params,data){
+           let res = await api.getNewsForSlug(params, data)
+        //    console.log(res);
+        this.setNewsForSlug(res)
+    }
+
     //Actions
     setAllNews(data, link) {
         this.allNews = data;
@@ -59,6 +66,10 @@ class NewsStore {
     setArticles(data, link) {
         this.articles = data;
         this.nextUrl = link;
+    }
+
+    setNewsForSlug(data){
+        this.newsForSlug =data
     }
 
 }

@@ -1,36 +1,40 @@
 import { AiFillTag } from "react-icons/ai"
-import newsImage from '../../img/neüs-image.jpg'
 import { FaUserAlt,FaCalendarAlt , FaComments, FaEye} from "react-icons/fa"
+import NewsPageVideoContent from "./NewsPageVideoContent"
+import  Carousel  from "../carousel/Carousel"
 
 
-const NewsProductContent = () => {
+const NewsProductContent = (props) => {
+
+    console.log(props);
 
     return(
         <div className="news-product-content">
             <div className="news-product-content__title">
                 <h1>
-                     Garrix & Kygo, The Chainsmokers Style - Feeling Me 
+                    {props.news.title}
                 </h1>
                 <div className="news-product-content__title__info">
                         <span>
                             <FaUserAlt/>
-                            <p> Sarkhan Rahimli </p>
+                            <p> {props.news.owner} </p>
                         </span>
                         <span>
                             <AiFillTag/>
-                            <p> valyuta </p>
+                                {props.news.tag.map((tag,index ) => <p key={index}> {tag.title}  &nbsp; </p> )}
                         </span>
                         <span>
                             <FaCalendarAlt/>
-                            <p> 2021.11.05 </p>
+                            <p> {props.news.created_at.split('T')[0] } </p>
+
                         </span>
                         <span>
                             <FaComments/>
-                            <p> 124 rəy </p>
+                            <p> {props.news.comments.length} rəy </p>
                         </span>
                         <span>
                             <FaEye/>
-                            <p> 1250 baxış </p>
+                            <p> {props.news.views} baxış </p>
                         </span>
                  </div>
 
@@ -38,15 +42,21 @@ const NewsProductContent = () => {
             
             <div className="news-product-content__desc">
                 <div className="news-product-content__desc__image">
-                    <img src={newsImage} alt='news-title' />                
+                    <img src={props.news.cover_image} alt='news-title' />                
                 </div>
                 <div className="news-product-content__desc__info">
                         <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                            {props.news.content}
                         </p>
                 </div>
             </div>
+            <div className="news-product-content__video">
+                <NewsPageVideoContent video={props.news.video_link}/>
+            </div>
 
+            <div className="news-product-content__carousel">
+                <Carousel images={props.news.news_images}/>
+            </div>
         </div>
     )
 }

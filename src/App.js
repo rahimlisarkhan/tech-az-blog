@@ -1,7 +1,11 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 import '../src/sass/App.scss';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//Components
 import HomePageContainer from './pages/home/HomePageContainer';
 import NewsForIDContainer from './pages/home/NewsForIDContainer';
 import AboutPageContainer from './pages/about/AboutPageContainer';

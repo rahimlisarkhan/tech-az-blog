@@ -45,6 +45,19 @@ export async function getAllNews(params,data){
 
 }
 
+export async function getNewsForSlug(params,data){
+  try {
+    const response = await getData(params,data)
+    return response
+ }catch (error) {
+    toast.error(`Serverdə xəta baş verdi...`)
+  } 
+}
+
+
+
+
+
 export async function getUser(params,data,token){
 
   try {
@@ -58,3 +71,4 @@ export async function getUser(params,data,token){
   } 
 
 }
+
