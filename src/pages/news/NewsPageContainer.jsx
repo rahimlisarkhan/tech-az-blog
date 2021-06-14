@@ -25,6 +25,7 @@ const NewsPageContainer = (props) => {
     },[stores.newsStore.news])
     
 
+
     return (
         !lastInfo || !allInfo
         ?<Layout><Loading/></Layout>
@@ -32,12 +33,9 @@ const NewsPageContainer = (props) => {
            <div className="news-content">
                 <div className="news-content__trend" onClick={() => props.history.push(`/esas/${lastInfo[0].slug}`)}>
                     <div className="news-content__trend__image">
-                        {/* <img src={lastInfo[0].image} alt='test' /> */}
+                        <img src={lastInfo[0].cover_image} alt={lastInfo[0].title} />
 
-                        <img src={image} alt='test' />
-
-
-                        
+                        {console.log(lastInfo[0])}
                     </div>
                     
                     <div className="news-content__trend__info">

@@ -73,18 +73,18 @@ let FormAddArticle = (props) => {
         {(formik) => (
           <Form onSubmit={formik.handleSubmit}>
             <div className="form-owner-add-product">
-              <h1>Add Product</h1>
+              <h1>məqaləvi yarat</h1>
 
               <div className="form-product uploadsize">
-                <h3>Upload your Product image here</h3>
+                <h3>örtük şəkili yükləyin</h3>
 
                 <div className="form-product__content uploadsize__img">
                   <div className="form-product__content__group">
                     <label htmlFor="main_image">
                       <FaCloudUploadAlt />
                       <p>
-                        {" "}
-                        <span>Drag/Upload</span> your image here.
+                        
+                        <span>yüklə</span> / şəkil seçin.
                       </p>
                       <input
                         type="file"
@@ -101,13 +101,12 @@ let FormAddArticle = (props) => {
 
               <div className="form-product-text ">
                 <h3>
-                  Add your Product description and necessary information from
-                  here
+                  məqaləvizin məlumatların buraya doldurun
                 </h3>
 
                 <div className="form-product-text__content">
                   <div className="form-product-text__content__group">
-                    <label htmlFor="title">Title</label>
+                    <label htmlFor="title">başlıq</label>
                     <Field id="title" name="title" type="text" />
                     <p>
                       <ErrorMessage name="title" />
@@ -115,7 +114,7 @@ let FormAddArticle = (props) => {
                   </div>
                   <div className="form-product-text__content__group">
                     <label htmlFor="category">
-                      Category
+                      tag
                       <span  onClick={() => {setCategoryPanelView(!viewCategoryPanel)}}>
                               {!viewCategoryPanel ?<AiOutlinePlusCircle/> : <AiOutlineMinusCircle className='iconColor'/> }
                       </span>
@@ -124,7 +123,7 @@ let FormAddArticle = (props) => {
                         
                     </label>
                     <select  name="category" onChange={formik.handleChange}>
-                    <option value="" selected label='Choose here' disabled hidden/>
+                    <option value="" selected label='Tag seçin' disabled hidden/>
                       {categoriesData &&
                         categoriesData.map((el) => (
                           <option value={el.id}  label={el.title}/>
@@ -135,63 +134,33 @@ let FormAddArticle = (props) => {
                     </p>
                   </div>
                   <div className="form-product-text__content__group">
-                    <label htmlFor="price">Price</label>
-                    <Field
+                    <label htmlFor="price">qısa məzmun</label>
+                    <textarea
                       id="price"
                       name="price"
-                      type="number"
-                      placeholder="$"
+                      type="text"
+                      placeholder=""
                     />
                     <p>
                       <ErrorMessage name="price" />
                     </p>
                   </div>
                   <div className="form-product-text__content__group">
-                    <label htmlFor="discount_price">Discount price</label>
-                    <Field
+                    <label htmlFor="discount_price">mezmun</label>
+                    <textarea
                       id="discount_price"
                       name="discount_price"
                       type="number"
                     />
                     <p>
-                      <ErrorMessage name="discount_price" />
+                        <ErrorMessage name="discount_price" />
                     </p>
                   </div>
-                  <div className="form-product-text__content__group">
-                    <label htmlFor="amount_by_unit">Amount by unit</label>
-                    <Field
-                      id="amount_by_unit"
-                      name="amount_by_unit"
-                      type="number"
-                    />
-                    <p>
-                      <ErrorMessage name="amount_by_unit" />
-                    </p>
-                  </div>
-                  <div className="form-product-text__content__group">
-                    <label htmlFor="unit">Unit</label>
-                    <Field id="unit" name="unit" type="text" />
-                    <p>
-                      <ErrorMessage name="unit" />
-                    </p>
-                  </div>
-                  <div className="form-product-text__content__group">
-                    <label htmlFor="description">Description</label>
-                    <Field
-                      id="description"
-                      className="input-h"
-                      name="description"
-                      type="text"
-                    />
-                    <p>
-                      <ErrorMessage name="description" />
-                    </p>
-                  </div>
-                </div>
+              </div>
               </div>
 
               <div className="form-btn-group">
-                <button type='button' onClick={() => props.setAddPanel()}>Cancel</button>
+                <button type='button' onClick={() => props.setArticlePanel()}>Cancel</button>
                 <button disabled={props.panelOpenClose}>Create Product</button>
               </div>
             </div>

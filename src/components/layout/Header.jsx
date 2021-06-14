@@ -7,10 +7,13 @@ import Auth from "../auth/auth";
 import { AiOutlineUser } from "react-icons/ai";
 import { BsPlusCircle } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
+import FormAddArticle from "../profile/FormAddArticle";
 
 const Header = (props) => {
   const [opencloseAuth, setOpenCloseAuth] = useState(false);
   const [openUserDrop, setOpenUserDrop] = useState(false);
+  const [articlePanel, setArticlePanel] = useState(false);
+
 
   useEffect(() => {
     //checktoken
@@ -93,7 +96,9 @@ const Header = (props) => {
                     </i>
                     hesabım
                   </li>
-                  <li  onClick={() => props.history.push("/meqale-paylas")}>
+                  <li  onClick={() =>{
+                      setArticlePanel(!articlePanel)
+                  }}>
                     <i>
                       <BsPlusCircle />
                     </i>
@@ -127,6 +132,15 @@ const Header = (props) => {
       {opencloseAuth && (
         <Auth setOpenCloseAuth={() => setOpenCloseAuth(!opencloseAuth)} />
       )}
+            {/* //profile Create article panel */}
+
+            <div
+        className={
+          articlePanel ? "form-article form-article-show" : "form-article"
+        }
+      >
+        <FormAddArticle setArticlePanel={() => setArticlePanel(false)} />
+      </div>
     </header>
   );
 };
