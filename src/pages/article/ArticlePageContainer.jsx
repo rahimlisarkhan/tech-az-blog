@@ -31,7 +31,7 @@ const ArticlesPageContainer = (props) => {
            <div className="news-content">
                 <div className="news-content__trend" onClick={() => props.history.push(`/esas/${lastInfo[0].slug}`)}>
                     <div className="news-content__trend__image">
-                        <img src={lastInfo[0].image} alt='test' />
+                        <img src={lastInfo[0].cover_image} alt='test' />
                     </div>
                     
                     <div className="news-content__trend__info">
@@ -51,7 +51,7 @@ const ArticlesPageContainer = (props) => {
                     </div>
                     
                     <div className="news-content__last__card__image">
-                        <img src={news.image} alt='test' />
+                        <img src={news.cover_image} alt='test' />
                     </div>
                     
                     <div className="news-content__last__card__info">

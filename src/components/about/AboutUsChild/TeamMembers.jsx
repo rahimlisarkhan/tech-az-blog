@@ -14,65 +14,8 @@ const TeamMembers = () => {
         <div id='6' className="home-page-content__events bg-dark d-flex-col bg-none">
          
             <div className="home-page-content__events__logos bg-white">
-                  <div className="home-page-content__events__logos__card bg-green">
-                    <div className='teamcontent'>
-
-                        <div className="teamcontent__desc">
-                            <h1>Sanan <br/> abdullayev</h1>
-                            <h3>content manager <br/> sanan@tech.az </h3>
-                        </div>
-                        <div className="teamcontent__sosial">
-                            <a href='https://www.facebook.com/profile.php?id=100057574088086  ' target='blank'> <icon.FaFacebookSquare className='icon'/></a>
-                            <a href='https://www.linkedin.com/in/sənan-abdullayev-56a194205/ ' target='blank'>  <icon.FaLinkedin className='icon'/></a>
-                            <a href='https://www.instagram.com/senanabdl/' target='blank'>  <icon.FaInstagramSquare className='icon'/></a>
-                        </div>
-                      
-                    </div>   
-
-
-                  <img className='team' src={logo3} alt='brands'/>
-
-                </div>
-                <div className="home-page-content__events__logos__card bg-green">
-                    <div className='teamcontent'>
-
-                        <div className="teamcontent__desc">
-                            <h1>ılgar <br/> Alirizayev</h1>
-                            <h3>Program manager <br/> ilqar@tech.az </h3>
-                        </div>   
-                        <div className="teamcontent__sosial">
-                            <a href='https://www.facebook.com/ilgar.alirzayev ' target='blank'> <icon.FaFacebookSquare className='icon'/></a>
-                            <a href='https://www.linkedin.com/in/igorthenomad/ ' target='blank'>  <icon.FaLinkedin className='icon'/></a>
-                            <a href='https://www.instagram.com/igorthenomad/' target='blank'>  <icon.FaInstagramSquare className='icon'/></a>
-                        </div>
-                      
-                    </div>
-
-
-                  <img className='team' src={logo2} alt='brands'/>
-
-                </div>
-                <div className="home-page-content__events__logos__card bg-green">
-                    <div className='teamcontent'>
-
-                        <div className="teamcontent__desc">
-                            <h1>Jamil <br/> Huseynzada</h1>
-                            <h3> project manager  <br/> jamil@tech.az </h3>
-                        </div>  
-                        <div className="teamcontent__sosial">
-                            <a href='https://www.facebook.com/cemil.huseynzade.7' target='blank'> <icon.FaFacebookSquare className='icon'/></a>
-                            <a href='https://www.linkedin.com/in/cemilhuseynzade/' target='blank'>  <icon.FaLinkedin className='icon'/></a>
-                            <a href='https://www.instagram.com/cemilhuseynzade/ ' target='blank'>  <icon.FaInstagramSquare className='icon'/></a>
-                        </div>
-                      
-                    </div>
-
-
-                  <img className='team' src={logo1} alt='brands'/>
-
-                </div>
-                <div className="home-page-content__events__logos__card bg-green">
-                    <div className='teamcontent'>
+            <div className="home-page-content__events__logos__card team_card bg-green">
+                    <div className='teamcontent '>
 
                         <div className="teamcontent__desc">
                             <h1>Tariyel <br/> Aghazada</h1>
@@ -91,6 +34,45 @@ const TeamMembers = () => {
 
                 </div>
           
+                <div className="home-page-content__events__logos__card team_card bg-green">
+                    <div className='teamcontent '>
+
+                        <div className="teamcontent__desc">
+                            <h1>Sanan <br/> abdullayev</h1>
+                            <h3>content manager <br/> sanan@tech.az </h3>
+                        </div>
+                        <div className="teamcontent__sosial">
+                            <a href='https://www.facebook.com/profile.php?id=100057574088086  ' target='blank'> <icon.FaFacebookSquare className='icon'/></a>
+                            <a href='https://www.linkedin.com/in/sənan-abdullayev-56a194205/ ' target='blank'>  <icon.FaLinkedin className='icon'/></a>
+                            <a href='https://www.instagram.com/senanabdl/' target='blank'>  <icon.FaInstagramSquare className='icon'/></a>
+                        </div>
+                      
+                    </div>   
+
+
+                  <img className='team' src={logo3} alt='brands'/>
+
+                </div>
+                <div className="home-page-content__events__logos__card team_card bg-green">
+                    <div className='teamcontent '>
+
+                        <div className="teamcontent__desc">
+                            <h1>Jamil <br/> Huseynzada</h1>
+                            <h3> project manager  <br/> jamil@tech.az </h3>
+                        </div>  
+                        <div className="teamcontent__sosial">
+                            <a href='https://www.facebook.com/cemil.huseynzade.7' target='blank'> <icon.FaFacebookSquare className='icon'/></a>
+                            <a href='https://www.linkedin.com/in/cemilhuseynzade/' target='blank'>  <icon.FaLinkedin className='icon'/></a>
+                            <a href='https://www.instagram.com/cemilhuseynzade/ ' target='blank'>  <icon.FaInstagramSquare className='icon'/></a>
+                        </div>
+                      
+                    </div>
+
+
+                  <img className='team' src={logo1} alt='brands'/>
+
+                </div>
+             
             </div>
             <div className="home-page-content__events__desc local-patern">
               <img src={arrowIcon} />

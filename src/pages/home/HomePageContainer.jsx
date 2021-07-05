@@ -10,14 +10,22 @@ const HomePageContainer = (props) => {
 
   useEffect(() => {
     !stores.newsStore.allNews && stores.newsStore.getAllNews("mixdata/", {});
+
+
     const lastInfo =
       stores.newsStore.allNews && stores.newsStore.allNews.reverse().slice(-1);
     const allInfo =
-      stores.newsStore.allNews && stores.newsStore.allNews.slice(1);
+      stores.newsStore.allNews && stores.newsStore.allNews.reverse().slice(1);
+
+    console.log(lastInfo);
 
     setLastInfo(lastInfo);
     setAllInfo(allInfo);
   }, [stores.newsStore.allNews]);
+
+
+
+  console.log(allInfo);
 
   return !lastInfo || !allInfo ? (
     <Layout>
@@ -67,7 +75,7 @@ const HomePageContainer = (props) => {
                 </div>
 
                 <div className="news-content__last__card__image">
-                  <img src={news.image} alt="test" />
+                  <img src={news.cover_image} alt="test" />
                 </div>
 
                 <div className="news-content__last__card__info">

@@ -54,8 +54,14 @@ export async function getNewsForSlug(params,data){
   } 
 }
 
-
-
+export async function getTags(params,data){
+  try{
+    const response = await getData(params,data)
+    return response
+  }catch(error){
+    toast.error(`Serverdə xəta baş verdi...`)
+  }
+}
 
 
 export async function getUser(params,data,token){

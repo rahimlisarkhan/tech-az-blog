@@ -1,8 +1,8 @@
 .about {
     width: 100%;
-    height: 75rem;
+    height: 60rem;
     position: relative;
-    padding: 4rem  ;
+    padding: 0rem  ;
     margin-bottom: 3rem;
     display: flex;
     justify-content: flex-start;
@@ -107,7 +107,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        left: 5%;
+        left: 0%;
         z-index: 9999999;
         animation: textScale 15s linear 2s infinite alternate;
         @include respond(phone){
@@ -144,7 +144,6 @@
             }
             span{
                 color: $color-bg-white;
-              
             }
         }
 
@@ -152,7 +151,7 @@
             width:75%;
             color: $color-bg-white;
             font-size: 2.3rem;
-            margin: 2rem 0;
+            margin: 2rem 0 !important;
             line-height: 1.6;
             letter-spacing: .1rem;
 
@@ -207,14 +206,14 @@
 
 @keyframes textScale {
     from {
-        left: 5%;
+        left: 0%;
         @include respond(tab-port){
             left: 25%;
         }
     }
 
     to {
-        left: 10%;
+        left: 5%;
         @include respond(tab-port){
             left: 35%;
         }

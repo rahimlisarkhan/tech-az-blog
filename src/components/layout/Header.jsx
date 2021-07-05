@@ -23,9 +23,12 @@ const Header = (props) => {
     stores.userStore.userToken && !stores.userStore.userInfo && stores.userStore.getUser('user/profile',{},stores.userStore.userToken);
 
     stores.userStore.userToken && setOpenCloseAuth(false);
+    !stores.newsStore.tags && stores.newsStore.getTags("tags/", {});
 
 
   }, [stores.userStore.userToken]);
+
+
 
   return (
     <header className="header-desktop">

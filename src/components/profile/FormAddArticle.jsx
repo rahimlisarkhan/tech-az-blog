@@ -4,6 +4,10 @@ import { Form, Field, ErrorMessage, Formik } from "formik";
 import * as Yup from "yup";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import "react-toastify/dist/ReactToastify.css";
+import stores from "../../stores";
+
+
+
 
 //VALIDATE MESSAGES
 const OwnerAddProduct = Yup.object().shape({
@@ -63,11 +67,11 @@ let FormAddArticle = (props) => {
           data.append("amount_by_unit", values.amount_by_unit);
           data.append("unit", values.unit);
 
-          form.resetForm()
+          // form.resetForm()
  
-        props.createAddProduct(data)
-        props.getOwnerProduct()
-       
+        // props.createAddProduct(data)
+        // props.getOwnerProduct()
+          
         }}
       >
         {(formik) => (
@@ -122,11 +126,11 @@ let FormAddArticle = (props) => {
                        
                         
                     </label>
-                    <select  name="category" onChange={formik.handleChange}>
+                    <select multiple  name="category" onChange={formik.handleChange}>
                     <option value="" selected label='Tag seçin' disabled hidden/>
-                      {categoriesData &&
-                        categoriesData.map((el) => (
-                          <option value={el.id}  label={el.title}/>
+                      {stores.newsStore.tags &&
+                        stores.newsStore.tags.map((tag) => (
+                          <option value={tag.title} key={tag.title}  label={tag.title}/>
                         ))}
                     </select>
                     <p>

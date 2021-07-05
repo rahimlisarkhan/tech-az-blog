@@ -46,17 +46,33 @@ const NewsProductContent = (props) => {
                 </div>
                 <div className="news-product-content__desc__info">
                         <p>
-                            {props.news.content}
+                            {props.news.content.slice(0,200)}
                         </p>
                 </div>
             </div>
             <div className="news-product-content__video">
                 <NewsPageVideoContent video={props.news.video_link}/>
             </div>
-
-            <div className="news-product-content__carousel">
-                <Carousel images={props.news.news_images}/>
+            <div className="news-product-content__desc">
+       
+                <div className="news-product-content__desc__info">
+                        <p>
+                            {props.news.content.slice(200,400)}
+                        </p>
+                </div>
             </div>
+            <div className="news-product-content__carousel">
+                <Carousel images={props.news.videos_images}/>
+            </div>
+
+            <div className="news-product-content__desc">
+       
+       <div className="news-product-content__desc__info">
+               <p>
+                   {props.news.content.slice(400)}
+               </p>
+       </div>
+   </div>
         </div>
     )
 }

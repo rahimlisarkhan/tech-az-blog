@@ -11,6 +11,7 @@ class NewsStore {
     videos = null
     articles = null
     nextUrl = null
+    tags = null
 
     constructor() {
         makeAutoObservable(this);
@@ -45,9 +46,14 @@ class NewsStore {
            let res = await api.getNewsForSlug(params, data)
         //    console.log(res);
         this.setNewsForSlug(res)
-    }
+        }
 
-    //Actions
+     async getTags(params,data){
+         let res = await api.getTags(params,data)
+         console.log(res);
+         this.setTags(res)
+     }
+        //Actions
     setAllNews(data, link) {
         this.allNews = data;
         this.nextUrl = link;
@@ -69,9 +75,12 @@ class NewsStore {
     }
 
     setNewsForSlug(data){
-        this.newsForSlug =data
+        this.newsForSlug = data
     }
 
+    setTags(data){
+        this.tags = data
+    }
 }
 
 export default new NewsStore();

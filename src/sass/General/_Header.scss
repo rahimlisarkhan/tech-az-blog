@@ -18,7 +18,7 @@
 
         @include respond(phone){
             width: 60rem;
-            background: red;
+            // background: red;
         }
 
         &__logo{

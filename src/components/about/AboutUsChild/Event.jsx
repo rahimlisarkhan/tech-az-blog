@@ -19,7 +19,7 @@ const Events = () => {
     return(
         <div className="home-page-content__events bg-none"id='2'>
             <div className="home-page-content__events__logos">
-                <div className="home-page-content__events__logos__card bg-none">
+                <div className="home-page-content__events__logos__card  bg-none">
                     <a href='https://slack.com/intl/en-az/' target='blank' className='card-link'> </a>
                     <img src={logo6} alt='brands'/>
                 </div>

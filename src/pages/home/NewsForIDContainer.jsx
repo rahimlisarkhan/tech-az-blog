@@ -8,6 +8,8 @@ import stores from "../../stores";
 
 const NewsForIDContainer = (props) => {
   useEffect(() => {
+    stores.newsStore.setNewsForSlug(null)
+
     !stores.newsStore.newsForSlug &&
       stores.newsStore.getNewsForSlug(
         `${props.match.params.id.split("-")[0]}/${props.match.params.id
@@ -17,7 +19,7 @@ const NewsForIDContainer = (props) => {
       );
   }, []);
 
-
+  
   if (!stores.newsStore.newsForSlug) {
     return <Loading />;
   }
