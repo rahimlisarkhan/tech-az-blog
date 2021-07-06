@@ -1,22 +1,34 @@
 import { FaEye } from "react-icons/fa";
-import newsImage from "../../img/neüs-image.jpg";
+import { withRouter } from "react-router-dom";
 
-const NewsProductCard = () => {
+const NewsProductCard = (props) => {
+  const { views, title, slug, short_desc, cover_image, file_abs_url } = props.news
+
   return (
-    <div className="news-product-content-list__card">
+    <div className="news-product-content-list__card"
+      onClick={() => {
+        props.history.push(
+          `/esas/${file_abs_url.split("/")[4]}-${slug
+          }`
+        );
+      }}
+    >
       <div className="news-product-content-list__card__overlay">
-        <FaEye /> <span> 124 baxış</span>
+        <FaEye /> <span> {views} baxış</span>
       </div>
 
       <div className="news-product-content-list__card__desc">
-        <h5>Garrix & Kygo, The Chainsmokers Style</h5>
-        <h6>Chainsmokers Style </h6>
+        <h5>{title}</h5>
+        <h6>{short_desc.slice(0, 70)}... </h6>
       </div>
       <div className="news-product-content-list__card__image">
-        <img src={newsImage} alt="img-title" />
+        <img src={cover_image} alt="img-title" />
       </div>
     </div>
   );
 };
 
-export default NewsProductCard;
+export default withRouter(NewsProductCard);
+
+// http://localhost:3000/esas/videos-lenovo-thinkbook-14-g2-1
+// http://localhost:3000/esas/videos-lenovo-thinkbook-14-g2-1

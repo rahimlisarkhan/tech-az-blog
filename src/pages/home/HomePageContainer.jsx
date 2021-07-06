@@ -17,15 +17,11 @@ const HomePageContainer = (props) => {
     const allInfo =
       stores.newsStore.allNews && stores.newsStore.allNews.reverse().slice(1);
 
-    console.log(lastInfo);
 
     setLastInfo(lastInfo);
     setAllInfo(allInfo);
   }, [stores.newsStore.allNews]);
 
-
-
-  console.log(allInfo);
 
   return !lastInfo || !allInfo ? (
     <Layout>

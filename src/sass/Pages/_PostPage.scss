@@ -42,7 +42,7 @@
         }
         &__info{
             p{
-                font-size: 1.6rem;
+                font-size: 1.8rem;
                 color: $color-bg-white;
             }
         }
@@ -126,6 +126,8 @@
             flex-direction: column;
             justify-content: flex-end;
             padding: .5rem;
+
+           
 
             h5{
                 color: $color-bg-green !important;

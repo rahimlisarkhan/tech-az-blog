@@ -8,12 +8,15 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BsPlusCircle } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import FormAddArticle from "../profile/FormAddArticle";
+import { FiChevronUp } from "react-icons/fi";
 
 const Header = (props) => {
   const [opencloseAuth, setOpenCloseAuth] = useState(false);
   const [openUserDrop, setOpenUserDrop] = useState(false);
   const [articlePanel, setArticlePanel] = useState(false);
+  const activePath = props.location.pathname.split('/')[1]
 
+  console.log(props);
 
   useEffect(() => {
     //checktoken
@@ -31,7 +34,7 @@ const Header = (props) => {
 
 
   return (
-    <header className="header-desktop">
+    <header id='7' className="header-desktop">
       <div className="header-desktop__content">
         <div
           className="header-desktop__content__logo"
@@ -42,33 +45,33 @@ const Header = (props) => {
         <nav className="header-desktop__content__navbar">
           <ul>
             <li
-              className={props.location.pathname === "/esas" ? "active" : ''}
+              className={activePath === "esas" || props.location.pathname === "/" ? "active" : ''}
               onClick={() => props.history.push("/esas")}
             >
               əsas
             </li>
             <li
-              className={props.location.pathname === "/xeberler" ? "active" : ''}
+              className={activePath === "xeberler" ? "active" : ''}
               onClick={() => props.history.push("/xeberler")}
             >
               xəbərlər
             </li>
             <li
-              className={props.location.pathname === "/videolar" ? "active" : ''}
+              className={activePath === "videolar" ? "active" : ''}
               onClick={() => props.history.push("/videolar")}
             >
               videolar
             </li>
             <li
-              className={props.location.pathname === "/meqaleler" ? "active" :''}
+              className={activePath === "meqaleler" ? "active" :''}
               onClick={() => props.history.push("/meqaleler")}
             >
               məqalələr
             </li>
             <li
-              className={props.location.pathname === "/haqqimizda" ? "active":''}
+              className={activePath === "haqqimizda" ? "active":''}
               onClick={() => props.history.push("/haqqimizda")}
-            >
+            > 
               haqqımızda
             </li>
           </ul>
@@ -144,6 +147,9 @@ const Header = (props) => {
       >
         <FormAddArticle setArticlePanel={() => setArticlePanel(false)} />
       </div>
+    
+      <a href='#7' className='arrowIcon'><FiChevronUp/> </a>
+    
     </header>
   );
 };

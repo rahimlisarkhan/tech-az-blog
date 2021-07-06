@@ -10,6 +10,7 @@ const ProfilePageContainer = (props) => {
   const [lastInfo, setLastInfo] = useState(null);
   const [allInfo, setAllInfo] = useState(null);
 
+
   useEffect(() => {
     !stores.newsStore.allNews && stores.newsStore.getAllNews("mixdata/", {});
     const lastInfo =

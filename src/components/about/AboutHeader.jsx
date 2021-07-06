@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io';
 import { FaLinkedin,FaInstagramSquare,FaTwitterSquare, FaFacebookSquare, FaYoutubeSquare } from "react-icons/fa";
-import { FiChevronUp } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 
 import headerImg from '../../img/Artboard 1.png'
@@ -10,7 +9,7 @@ import headerImg from '../../img/Artboard 1.png'
 const AboutHeader = () =>{
     const [editmode, setEditmode] = useState(false)
     return(
-        <header className="about" >
+        <header  className="about" >
             <div className='about__desc' >
             <h1>hər şey <span>tech.az</span> ilə bağlıdır </h1>
             <p> yerli başlanğıc və texnoloji ekosisteminə beynəlxalq təcrübə və təcrübə gətirən bir texnoloji media və hadisə platformaları</p>
@@ -30,7 +29,6 @@ const AboutHeader = () =>{
             <img src={headerImg} alt='Slogan' />
             
             
-            <a href='#7' className='arrowIcon'><FiChevronUp/> </a>
         </header>
     )
 }

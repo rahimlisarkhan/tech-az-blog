@@ -20,15 +20,14 @@ export default class Carousel extends Component {
   }
 
   render() {
-    console.log(this.props);
 
     if (!this.props.images) {
-      return <p>Test</p>
+      return <p></p>
     }
 
     return (
       <div>
-        <h2 className='news-image'>Xəbər haqqında digər şəkillər</h2>
+        <h2 className='news-image mb-4'>Xəbər haqqında digər şəkillər</h2>
         {/* <h4>First Slider</h4> */}
         <Slider
           asNavFor={this.state.nav2}
@@ -43,7 +42,7 @@ export default class Carousel extends Component {
           ))}
 
         </Slider>
-        <h4>Second Slider</h4>
+        <br/>
         <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}

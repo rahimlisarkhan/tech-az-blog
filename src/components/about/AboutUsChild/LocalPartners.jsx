@@ -43,7 +43,7 @@ const LocalPartners = () => {
                    
                 </div>
                 <div className="home-page-content__events__logos__card">
-                <a href='http://fem.tech.az' target='blank' className='card-link'> </a>
+                    <a href='http://fem.tech.az' target='blank' className='card-link'> </a>
                 
                     <img src={logo1} alt='brands'/>
                   

@@ -9,66 +9,80 @@ import { observer } from "mobx-react";
 
 const NewsPageContainer = (props) => {
 
-    const [lastInfo, setLastInfo] =  useState(null)
-    const [allInfo, setAllInfo] =  useState(null)
+    const [lastInfo, setLastInfo] = useState(null)
+    const [allInfo, setAllInfo] = useState(null)
 
 
-    useEffect(()=>{
+    useEffect(() => {
 
-        !stores.newsStore.news && stores.newsStore.getAllNews('news/',{})
+        !stores.newsStore.news && stores.newsStore.getAllNews('news/', {})
         const lastInfo = stores.newsStore.news && stores.newsStore.news.reverse().slice(-1)
         const allInfo = stores.newsStore.news && stores.newsStore.news.slice(1)
 
         setLastInfo(lastInfo)
         setAllInfo(allInfo)
 
-    },[stores.newsStore.news])
-    
+    }, [stores.newsStore.news])
+
 
     return (
         !lastInfo || !allInfo
-        ?<Layout><Loading/></Layout>
-        :<Layout>
-           <div className="news-content">
-                <div className="news-content__trend" onClick={() => props.history.push(`/xeberler/${lastInfo[0].slug}`)}>
-                    <div className="news-content__trend__image">
-                        <img src={lastInfo[0].cover_image} alt={lastInfo[0].title} />
+            ? <Layout><Loading /></Layout>
+            : <Layout>
+                <div className="news-content">
+                    <div className="news-content__trend" onClick={() => {
+                        props.history.push(
+                            `/xeberler/${lastInfo[0].file_abs_url.split("/")[4]}-${lastInfo[0].slug
+                            }`
+                        );
+                    }
+                    }
 
-                        {console.log(lastInfo[0])}
+                    >
+                        <div className="news-content__trend__image">
+                            <img src={lastInfo[0].cover_image} alt={lastInfo[0].title} />
+
+                            {console.log(lastInfo[0])}
+                        </div>
+
+                        <div className="news-content__trend__info">
+                            <p>Xəbər • {lastInfo[0].created_at.split('T')[0]} {lastInfo[0].created_at.split('T')[1].slice(0, 5)} tarixində  yükləndi </p>
+                            <h1>{lastInfo[0].title}</h1>
+                        </div>
+
                     </div>
-                    
-                    <div className="news-content__trend__info">
-                        <p>Xəbər • {lastInfo[0].created_at.split('T')[0] } {lastInfo[0].created_at.split('T')[1].slice(0,5)} tarixində  yükləndi </p>
-                        <h1>{lastInfo[0].title}</h1>
+
+                    <div className="news-content__last">
+                        {allInfo && allInfo.map((news, index) => (
+
+                            <div className="news-content__last__card" key={index} onClick={() =>
+                                props.history.push(
+                                    `/xeberler/${news.file_abs_url.split("/")[4]}-${news.slug
+                                    }`
+                                )
+                            }
+                            >
+
+                                <div className="news-content__last__card__view">
+                                    <p>{news.view}</p>
+                                </div>
+
+                                <div className="news-content__last__card__image">
+                                    {/* <img src={news.image} alt='test' /> */}
+                                    <img src={image} alt='test' />
+
+                                </div>
+
+                                <div className="news-content__last__card__info">
+                                    <p>Xəbər • {news.created_at.split('T')[0]} {news.created_at.split('T')[1].slice(0, 5)} tarixində yükləndi </p>
+                                    <h1>{news.title}</h1>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    
                 </div>
-
-                <div className="news-content__last">
-                    {allInfo && allInfo.map( (news,index) => (
-
-                    <div className="news-content__last__card" key={index}  onClick={() => props.history.push(`/xeberler/${news.slug}`)}>
-                    
-                    <div className="news-content__last__card__view">
-                        <p>{news.view}</p>
-                    </div>
-                    
-                    <div className="news-content__last__card__image">
-                        {/* <img src={news.image} alt='test' /> */}
-                        <img src={image} alt='test' />
-
-                    </div>
-                    
-                    <div className="news-content__last__card__info">
-                        <p>Xəbər • {news.created_at.split('T')[0] } {news.created_at.split('T')[1].slice(0,5)} tarixində yükləndi </p>
-                        <h1>{news.title}</h1>
-                    </div>
-                    </div>
-                    ))}
-                </div>
-              </div> 
-        </Layout>
-     )
+            </Layout>
+    )
 }
 
 export default observer(NewsPageContainer)

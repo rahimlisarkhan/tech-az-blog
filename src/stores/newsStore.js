@@ -50,7 +50,7 @@ class NewsStore {
 
      async getTags(params,data){
          let res = await api.getTags(params,data)
-         console.log(res);
+        //  console.log(res);
          this.setTags(res)
      }
         //Actions

@@ -34,8 +34,8 @@ const ProfileContent = (props) => {
               <div className="profile-content__profile__header__image__form-group">
 
                 <label htmlFor='image'>
-                <AiFillCamera/>
-                  <input type='file' id='image'/>
+                  <AiFillCamera />
+                  <input type='file' id='image' />
                 </label>
               </div>
 
@@ -79,10 +79,10 @@ const ProfileContent = (props) => {
                       <FaCalendar />
                     </i>
 
-              {!userInfoChangePanel ? (
+                    {!userInfoChangePanel ? (
                       props.userInfo && props.userInfo.birthday
-                      ? props.userInfo.birthday
-                      : "doğum tarixi"
+                        ? props.userInfo.birthday
+                        : "doğum tarixi"
                     ) : (
                       <input
                         type="date"
@@ -95,15 +95,15 @@ const ProfileContent = (props) => {
                       <FaGraduationCap />
                     </i>
 
-{!userInfoChangePanel ? (
+                    {!userInfoChangePanel ? (
                       props.userInfo && props.userInfo.education
-                      ? props.userInfo.education
-                      : "təhsil"
+                        ? props.userInfo.education
+                        : "təhsil"
                     ) : (
                       <input
                         type="text"
                         defaultValue={props.userInfo && props.userInfo.education}
-                        placeholder={props.userInfo && props.userInfo.education ? props.userInfo.education : 'təhsiliniz?' }
+                        placeholder={props.userInfo && props.userInfo.education ? props.userInfo.education : 'təhsiliniz?'}
 
                       />
                     )}
@@ -113,15 +113,15 @@ const ProfileContent = (props) => {
                       <MdBusinessCenter />
                     </i>
 
-{!userInfoChangePanel ? (
+                    {!userInfoChangePanel ? (
                       props.userInfo && props.userInfo.position
-                      ? props.userInfo.position
-                      : "iş yeri"
+                        ? props.userInfo.position
+                        : "iş yeri"
                     ) : (
                       <input
                         type="text"
                         defaultValue={props.userInfo && props.userInfo.position}
-                        placeholder={props.userInfo && props.userInfo.position ? props.userInfo.position : 'iş yeriniz?' }
+                        placeholder={props.userInfo && props.userInfo.position ? props.userInfo.position : 'iş yeriniz?'}
 
                       />
                     )}
@@ -162,7 +162,9 @@ const ProfileContent = (props) => {
               <div className="article-created-content-list">
                 {props.userInfo && props.userInfo.articles.length > 0 ? (
                   props.userInfo.articles.map((article) => (
-                    <ProfileArticleCard article={article} />
+                    <ProfileArticleCard first_name={props.userInfo.first_name} 
+                                        last_name={props.userInfo.last_name} 
+                                        article={article} />
                   ))
                 ) : (
                   <ProfileArticleEmpty />

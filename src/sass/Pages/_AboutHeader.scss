@@ -10,21 +10,7 @@
     align-items: center;
 
     //arrow
-    .arrowIcon{
-        position: fixed;
-        right: 3%;
-        bottom: 7%;
-        z-index: 99999999;
-        filter: drop-shadow(0 .1rem .4rem rgba(0, 0, 0, 0.788));
-        font-size: 7rem;
-        color: $color-bg-green;
-
-
-        @include respond(phone){
-            font-size: 5rem;
-        }
-        
-    }
+ 
     //sosial
     &__icons{
         width: 4.5%;
@@ -220,4 +206,21 @@
     }
 
    
+}
+
+
+.arrowIcon{
+    position: fixed;
+    right: 2% !important;
+    bottom: 5% !important;
+    z-index: 99999999;
+    filter: drop-shadow(0 .1rem .4rem rgba(0, 0, 0, 0.788));
+    font-size: 5rem;
+    color: $color-bg-green;
+
+
+    @include respond(phone){
+        font-size: 5rem;
+    }
+    
 }

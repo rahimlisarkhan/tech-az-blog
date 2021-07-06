@@ -20,11 +20,11 @@ const App = () => {
     <Switch>
       <Route path="/esas" exact  component={HomePageContainer} />
       <Route path='/esas/:id?' component={NewsForIDContainer } />
-      <Route path='/xeberler' component={NewsPageContainer } />
+      <Route path='/xeberler' exact component={NewsPageContainer } />
       <Route path='/xeberler/:id?' component={NewsForIDContainer } />
-      <Route path='/videolar' component={VideoPageContainer } />
+      <Route path='/videolar' exact component={VideoPageContainer } />
       <Route path='/videolar/:id?' component={NewsForIDContainer } />
-      <Route path='/meqaleler' component={ArticlePageContainer } />
+      <Route path='/meqaleler' exact component={ArticlePageContainer } />
       <Route path='/meqaleler/:id?' component={NewsForIDContainer } />
       <Route path='/haqqimizda' component={AboutPageContainer } />
       <Route path='/hesabim' component={ProfilePageContainer} />
