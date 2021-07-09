@@ -36,7 +36,7 @@ export default class Carousel extends Component {
 
           {this.props.images.map((image, index) => (
             <div class='carousel-image' key={index}>
-              <img src={image.image} />
+              <img src={`${this.props.imgUrl}${image.image}`} />
               {/* <h1>Test 1</h1> */}
             </div>
           ))}
@@ -52,7 +52,7 @@ export default class Carousel extends Component {
         >
           {this.props.images.map((image, index) => (
             <div className='carousel-image_nav' key={index}>
-              <img src={image.image} />
+              <img src={`${this.props.imgUrl}${image.image}`} />
             </div>
           ))}
         </Slider>

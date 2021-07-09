@@ -1,11 +1,11 @@
 import backgroundLogo from "../../img/Artboard 1.png";
-import { FaCalendar, FaGraduationCap, FaUserCheck } from "react-icons/fa";
-import { MdBusinessCenter, MdCamera, MdEmail } from "react-icons/md";
 import ProfileArticleCard from "./ProfileArticleCard";
 import ProfileArticleEmpty from "./ProfileArticleEmpty";
 import FormAddArticle from "./FormAddArticle";
+import ProfileUserInfo from "./ProfileUserInfo"
 import { useState } from "react";
 import { AiFillCamera } from "react-icons/ai";
+
 
 const ProfileContent = (props) => {
   const [articlePanel, setArticlePanel] = useState(false);
@@ -43,106 +43,7 @@ const ProfileContent = (props) => {
           </div>
           <div className="profile-content__profile__body">
             <div className="profile-content__profile__body__left">
-              <div className="profile-user-info">
-                <h1>hesab məlumatları</h1>
-                <div className="profile-user-info__content">
-                  <p>
-                    <i>
-                      <FaUserCheck />
-                    </i>
-                    {!userInfoChangePanel ? (
-                      props.userInfo && props.userInfo.username
-                    ) : (
-                      <input
-                        type="text"
-                        defaultValue={props.userInfo && props.userInfo.username}
-                      />
-                    )}
-                  </p>
-                  <p>
-                    <i>
-                      <MdEmail />
-                    </i>
-
-
-                    {!userInfoChangePanel ? (
-                      props.userInfo && props.userInfo.email
-                    ) : (
-                      <input
-                        type="text"
-                        defaultValue={props.userInfo && props.userInfo.email}
-                      />
-                    )}
-                  </p>
-                  <p>
-                    <i>
-                      <FaCalendar />
-                    </i>
-
-                    {!userInfoChangePanel ? (
-                      props.userInfo && props.userInfo.birthday
-                        ? props.userInfo.birthday
-                        : "doğum tarixi"
-                    ) : (
-                      <input
-                        type="date"
-                        defaultValue={props.userInfo && props.userInfo.email}
-                      />
-                    )}
-                  </p>
-                  <p>
-                    <i>
-                      <FaGraduationCap />
-                    </i>
-
-                    {!userInfoChangePanel ? (
-                      props.userInfo && props.userInfo.education
-                        ? props.userInfo.education
-                        : "təhsil"
-                    ) : (
-                      <input
-                        type="text"
-                        defaultValue={props.userInfo && props.userInfo.education}
-                        placeholder={props.userInfo && props.userInfo.education ? props.userInfo.education : 'təhsiliniz?'}
-
-                      />
-                    )}
-                  </p>
-                  <p>
-                    <i>
-                      <MdBusinessCenter />
-                    </i>
-
-                    {!userInfoChangePanel ? (
-                      props.userInfo && props.userInfo.position
-                        ? props.userInfo.position
-                        : "iş yeri"
-                    ) : (
-                      <input
-                        type="text"
-                        defaultValue={props.userInfo && props.userInfo.position}
-                        placeholder={props.userInfo && props.userInfo.position ? props.userInfo.position : 'iş yeriniz?'}
-
-                      />
-                    )}
-                  </p>
-                </div>
-                {!userInfoChangePanel ? (
-                  <button
-                    onClick={() => setUserInfoChangePanel(!userInfoChangePanel)}
-                    className="profile-user-info__created"
-                  >
-                    məlumatları dəyişdir
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => setUserInfoChangePanel(!userInfoChangePanel)}
-                    className="profile-user-info__created bg-success-1"
-                  >
-                    yaddaşda saxla
-                  </button>
-                )}
-              </div>
+              <ProfileUserInfo userInfo={props.userInfo} userInfoChangePanel={userInfoChangePanel} setUserInfoChangePanel={() => setUserInfoChangePanel(!userInfoChangePanel)} />
             </div>
             <div className="profile-content__profile__body__right">
               <div className="article-created-content">
@@ -162,9 +63,9 @@ const ProfileContent = (props) => {
               <div className="article-created-content-list">
                 {props.userInfo && props.userInfo.articles.length > 0 ? (
                   props.userInfo.articles.map((article) => (
-                    <ProfileArticleCard first_name={props.userInfo.first_name} 
-                                        last_name={props.userInfo.last_name} 
-                                        article={article} />
+                    <ProfileArticleCard first_name={props.userInfo.first_name}
+                      last_name={props.userInfo.last_name}
+                      article={article} />
                   ))
                 ) : (
                   <ProfileArticleEmpty />

@@ -16,7 +16,7 @@ const ArticlesPageContainer = (props) => {
 
         !stores.newsStore.articles && stores.newsStore.getAllNews('articles/', {})
         const lastInfo = stores.newsStore.articles && stores.newsStore.articles.reverse().slice(-1)
-        const allInfo = stores.newsStore.articles && stores.newsStore.articles.slice(1)
+        const allInfo = stores.newsStore.articles && stores.newsStore.articles.reverse().slice(1)
 
         setLastInfo(lastInfo)
         setAllInfo(allInfo)
@@ -31,7 +31,7 @@ const ArticlesPageContainer = (props) => {
                 <div className="news-content">
                     <div className="news-content__trend" onClick={() => {
                         props.history.push(
-                            `/meqaleler/${lastInfo[0].file_abs_url.split("/")[4]}-${lastInfo[0].slug
+                            `/meqaleler/articles-${lastInfo[0].slug
                             }`
                         );
                     }}>
@@ -51,7 +51,7 @@ const ArticlesPageContainer = (props) => {
 
                             <div className="news-content__last__card" key={news.slug} onClick={() => {
                                 props.history.push(
-                                    `/videolar/${news.file_abs_url.split("/")[4]}-${news.slug
+                                    `/articles/articles-${news.slug
                                     }`
                                 )
                             }}>

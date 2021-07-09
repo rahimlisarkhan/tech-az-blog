@@ -11,7 +11,6 @@ const NewsForIDContainer = (props) => {
   const [lastInfo, setLastInfo] = useState(null);
 
 
-  console.log(props);
   useEffect(() => {
     stores.newsStore.setNewsForSlug(null)
 

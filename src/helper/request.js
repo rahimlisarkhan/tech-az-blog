@@ -26,7 +26,7 @@ export async function postData(params = null, data, token = null) {
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
-      Authorization: token && `Bearer ${token}`,
+      Authorization: token && `Token ${token}`,
     },
   });
 
@@ -46,7 +46,7 @@ export async function putData(params = null, data, token = null) {
     
 
       "Content-Type": "application/json",
-      Authorization: token && `Bearer ${token}`,
+      Authorization: token && `Token ${token}`,
     },
   });
 
@@ -65,7 +65,7 @@ export async function deleteData(params = null, data, token = null) {
       "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
       "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token, Authorization, Accept,charset,boundary,Content-Length",
     
-      Authorization: token && `Bearer ${token}`,
+      Authorization: token && `Token ${token}`,
     },
   });
 

@@ -5,6 +5,8 @@ import Carousel from "../carousel/Carousel"
 
 const NewsProductContent = (props) => {
 
+    const imgUrl = 'http://188.166.98.147/'
+
     return (
         <div className="news-product-content">
             <div className="news-product-content__title">
@@ -39,7 +41,7 @@ const NewsProductContent = (props) => {
 
             <div className="news-product-content__desc">
                 <div className="news-product-content__desc__image">
-                    <img src={props.news.cover_image} alt='news-title' />
+                    <img src={`${imgUrl}${props.news.cover_image}`} alt='news-title' />
                 </div>
                 <div className="news-product-content__desc__info">
                     <p>
@@ -61,7 +63,7 @@ const NewsProductContent = (props) => {
                 </div>
             </div>
             <div className="news-product-content__carousel">
-                <Carousel images={props.news.videos_images ? props.news.videos_images : props.news.news_images} />
+                <Carousel imgUrl={imgUrl} images={props.news.videos_images ? props.news.videos_images : props.news.news_images} />
             </div>
 
             <div className="news-product-content__desc">

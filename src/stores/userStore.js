@@ -53,6 +53,11 @@ class UserInfo {
         this.setUser(res)
     }
 
+    async putUser(params,data,token) {
+        const res = await api.putUser(params,data,token);
+        // this.setUser(res)
+        console.log(res);
+    }
 
     //Actions
     //Auth--

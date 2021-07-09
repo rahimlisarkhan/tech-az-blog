@@ -361,9 +361,9 @@
     text-transform: lowercase !important;
     flex-direction: column;
     padding: 2rem;
-    background-color: $color-black-grey !important;
     background-image: url("../../img/icons\ _\ graphics/Asset 1.png"), linear-gradient($color-black-grey 85%, $color-black-grey 20%);
-
+    z-index: 999999999999999 !important;
+    background-color: red;
 
     h1 {
         font-size: 2rem;

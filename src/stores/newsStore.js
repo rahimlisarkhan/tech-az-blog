@@ -24,6 +24,7 @@ class NewsStore {
         switch (params) {
             case 'mixdata/':
                 res = await api.getAllNews(params, data)
+            console.log(res);
                 this.setAllNews(res.results, res.next)
                 break
             case 'news/':

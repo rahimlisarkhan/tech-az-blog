@@ -2,13 +2,14 @@ import { FaEye } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
 
 const NewsProductCard = (props) => {
-  const { views, title, slug, short_desc, cover_image, file_abs_url } = props.news
+  const {type, views, title, slug, short_desc, cover_image, file_abs_url } = props.news
 
+  console.log(type.toLowerCase());
   return (
     <div className="news-product-content-list__card"
       onClick={() => {
         props.history.push(
-          `/esas/${file_abs_url.split("/")[4]}-${slug
+          `/esas/${type.toLowerCase()}-${slug
           }`
         );
       }}

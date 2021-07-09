@@ -12,23 +12,23 @@ import stores from "../../stores";
 //VALIDATE MESSAGES
 const OwnerAddProduct = Yup.object().shape({
   title: Yup.string()
-    .min(3, "Too Short!")
-    .max(30, "Too Long!")
-    .required("Required"),
+    .min(3, "Çox qısadır!")
+    // .max(30, "Too Long!")
+    .required("Boş buraxıla bilməz"),
   description: Yup.string()
-    .min(10, "Too Short!")
-    .max(300, "Too Long!")
-    .required("Required"),
+    .min(10, "Çox qısadır!")
+    // .max(300, "Too Long!")
+    .required("Boş buraxıla bilməz"),
 
 //   category: Yup.string().required("Required"),
 
-  price: Yup.string().required("Required"),
+  price: Yup.string().required("Boş buraxıla bilmə"),
 
-  main_image: Yup.string().required("Required"),
+  main_image: Yup.string().required("Boş buraxıla bilmə"),
 
-  amount_by_unit: Yup.string().required("Required"),
+  amount_by_unit: Yup.string().required("Boş buraxıla bilməuired"),
 
-  unit: Yup.string().max(6, "Too Long!").required("Required"),
+  unit: Yup.string().required("Boş buraxıla bilmə"),
 });
 
 let FormAddArticle = (props) => {
@@ -127,10 +127,10 @@ let FormAddArticle = (props) => {
                         
                     </label>
                     <select multiple  name="category" onChange={formik.handleChange}>
-                    <option value="" selected label='Tag seçin' disabled hidden/>
+                    <option  selected label='Tag seçin' disabled hidden/>
                       {stores.newsStore.tags &&
-                        stores.newsStore.tags.map((tag) => (
-                          <option value={tag.title} key={tag.title}  label={tag.title}/>
+                        stores.newsStore.tags.map((tag,index) => (
+                          <option defaultValue={tag.title} key={index}  label={tag.title}/>
                         ))}
                     </select>
                     <p>

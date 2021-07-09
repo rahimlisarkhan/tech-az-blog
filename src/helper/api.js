@@ -78,3 +78,18 @@ export async function getUser(params,data,token){
 
 }
 
+
+
+export async function putUser(params,data,token){
+
+  try {
+    const response = await putData(params,data,token)
+
+    return response
+ }catch (error) {
+      // Error 😨
+    toast.error(`Serverdə xəta baş verdi...`)
+
+  } 
+
+}

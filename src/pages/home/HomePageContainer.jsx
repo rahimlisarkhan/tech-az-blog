@@ -18,6 +18,7 @@ const HomePageContainer = (props) => {
       stores.newsStore.allNews && stores.newsStore.allNews.reverse().slice(1);
 
 
+      console.log(lastInfo);
     setLastInfo(lastInfo);
     setAllInfo(allInfo);
   }, [stores.newsStore.allNews]);
@@ -34,7 +35,7 @@ const HomePageContainer = (props) => {
           className="news-content__trend"
           onClick={() => {
             props.history.push(
-              `/esas/${lastInfo[0].file_abs_url.split("/")[4]}-${
+              `/esas/${lastInfo[0].type.toLowerCase()}-${
                 lastInfo[0].slug
               }`
             );
@@ -46,9 +47,9 @@ const HomePageContainer = (props) => {
 
           <div className="news-content__trend__info">
             <p>
-              Xəbər • {lastInfo[0].created_at.split("T")[0]}{" "}
+              {lastInfo[0].type} • {lastInfo[0].created_at.split("T")[0]}{" "}
               {lastInfo[0].created_at.split("T")[1].slice(0, 5)} tarixində
-              yükləndi{" "}
+              yükləndi{" "} 
             </p>
             <h1>{lastInfo[0].title}</h1>
           </div>
@@ -62,7 +63,9 @@ const HomePageContainer = (props) => {
                 key={index}
                 onClick={() => {
                   props.history.push(
-                    `/esas/${news.file_abs_url.split("/")[4]}-${news.slug}`
+                    `/esas/${news.type.toLowerCase()}-${
+                      news.slug
+                    }`
                   );
                 }}
               >

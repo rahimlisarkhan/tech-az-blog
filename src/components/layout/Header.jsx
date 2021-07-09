@@ -76,7 +76,7 @@ const Header = (props) => {
             </li>
           </ul>
         </nav>
-        <div className="header-desktop__content__user">
+        {/* <div className="header-desktop__content__user">
           {stores.userStore.userToken ? (
             <div
               className="header-desktop__content__user__btn"
@@ -133,7 +133,7 @@ const Header = (props) => {
               </div>
             </>
           )}
-        </div>
+        </div> */}
       </div>
       {opencloseAuth && (
         <Auth setOpenCloseAuth={() => setOpenCloseAuth(!opencloseAuth)} />

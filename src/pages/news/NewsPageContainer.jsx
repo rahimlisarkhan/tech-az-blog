@@ -17,12 +17,14 @@ const NewsPageContainer = (props) => {
 
         !stores.newsStore.news && stores.newsStore.getAllNews('news/', {})
         const lastInfo = stores.newsStore.news && stores.newsStore.news.reverse().slice(-1)
-        const allInfo = stores.newsStore.news && stores.newsStore.news.slice(1)
+        const allInfo = stores.newsStore.news && stores.newsStore.news.reverse().slice(1)
 
+        console.log(lastInfo);
         setLastInfo(lastInfo)
         setAllInfo(allInfo)
 
     }, [stores.newsStore.news])
+
 
 
     return (
@@ -32,7 +34,7 @@ const NewsPageContainer = (props) => {
                 <div className="news-content">
                     <div className="news-content__trend" onClick={() => {
                         props.history.push(
-                            `/xeberler/${lastInfo[0].file_abs_url.split("/")[4]}-${lastInfo[0].slug
+                            `/xeberler/news-${lastInfo[0].slug
                             }`
                         );
                     }
@@ -57,7 +59,7 @@ const NewsPageContainer = (props) => {
 
                             <div className="news-content__last__card" key={index} onClick={() =>
                                 props.history.push(
-                                    `/xeberler/${news.file_abs_url.split("/")[4]}-${news.slug
+                                    `/xeberler/news-${news.slug
                                     }`
                                 )
                             }

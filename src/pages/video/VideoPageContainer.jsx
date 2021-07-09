@@ -16,7 +16,7 @@ const VideoPageContainer = (props) => {
         !stores.newsStore.videos && stores.newsStore.getAllNews('videos/', {})
 
         const lastInfo = stores.newsStore.videos && stores.newsStore.videos.reverse().slice(-1)
-        const allInfo = stores.newsStore.videos && stores.newsStore.videos.slice(1)
+        const allInfo = stores.newsStore.videos && stores.newsStore.videos.reverse().slice(1)
 
         setLastInfo(lastInfo)
         setAllInfo(allInfo)
@@ -31,7 +31,7 @@ const VideoPageContainer = (props) => {
                 <div className="news-content">
                     <div className="news-content__trend" onClick={() => {
                         props.history.push(
-                            `/videolar/${lastInfo[0].file_abs_url.split("/")[4]}-${lastInfo[0].slug}`
+                            `/videolar/videos-${lastInfo[0].slug}`
                         );
                     }}>
                         <div className="news-content__trend__image">
@@ -49,7 +49,7 @@ const VideoPageContainer = (props) => {
 
                             <div className="news-content__last__card" key={news.slug} onClick={() => {
                                 props.history.push(
-                                    `/videolar/${news.file_abs_url.split("/")[4]}-${news.slug
+                                    `/videolar/videos-${news.slug
                                     }`
                                 )
                             }}>
