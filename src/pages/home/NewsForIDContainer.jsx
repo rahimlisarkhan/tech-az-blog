@@ -28,7 +28,7 @@ const NewsForIDContainer = (props) => {
 
   useEffect(() => {
     const lastInfo =
-      stores.newsStore.allNews && stores.newsStore.newsForSlug && stores.newsStore.allNews.reverse().filter(news => news.slug !== stores.newsStore.newsForSlug.slug).slice(-5);
+      stores.newsStore.allNews && stores.newsStore.newsForSlug && stores.newsStore.allNews.reverse().filter(news => news.slug !== stores.newsStore.newsForSlug.slug).slice(-10);
 
     setLastInfo(lastInfo);
   }, [stores.newsStore.newsForSlug])
