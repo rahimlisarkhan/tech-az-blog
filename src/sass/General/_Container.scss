@@ -2,4 +2,9 @@
 .container-content{
     width: 120rem !important;
     margin:  0 auto;
+
+    @include respond(phone){
+        width: 100% !important;
+        margin: 0 !important;
+    }
 }

@@ -2,7 +2,9 @@
     width: 120rem;
     margin: 0 auto;
 
-
+    @include respond(phone){
+        width: 100%;
+    }
     .profile-content__profile {
 
         &__header {

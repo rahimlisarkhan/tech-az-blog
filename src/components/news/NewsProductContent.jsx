@@ -45,7 +45,7 @@ const NewsProductContent = (props) => {
                 </div>
                 <div className="news-product-content__desc__info">
                     <p>
-                        {props.news.content.slice(0, 400)}
+                        {props.news.content.slice(0, 500)}
                     </p>
                 </div>
             </div>
@@ -58,7 +58,7 @@ const NewsProductContent = (props) => {
 
                 <div className="news-product-content__desc__info">
                     <p>
-                        {props.news.content.slice(400, 800)}
+                        {props.news.content.slice(500, 900)}
                     </p>
                 </div>
             </div>
@@ -68,9 +68,9 @@ const NewsProductContent = (props) => {
 
             <div className="news-product-content__desc">
 
-                <div className="news-product-content__desc__info">
+                <div className="news-product-content__desc__info height-overflow">
                     <p>
-                        {props.news.content.slice(800)}
+                        {props.news.content.slice(900)}
                     </p>
                 </div>
             </div>

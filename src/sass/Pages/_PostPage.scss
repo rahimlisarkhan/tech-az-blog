@@ -1,85 +1,130 @@
-
-.news-product-content{
+.news-product-content {
     width: 100%;
-    &__title{
-       margin-top: 3rem; 
-       width: 80%;
 
-       h1{
-           font-size: 2.3rem;
-           margin-bottom: 1.5rem;
-           color: $color-bg-white;
+    &__title {
+        margin-top: 3rem;
+        width: 80%;
 
-       }
+        @include respond(phone) {
+            width: 99%;
+        }
 
-       &__info{
-           display: flex;
-            margin: 1.3rem 0 2rem 0; 
-            border-bottom:  .1rem solid #393b3c;
+        h1 {
+            font-size: 2.3rem;
+            margin-bottom: 1.5rem;
+            color: $color-bg-white;
+
+            @include respond(phone) {
+                margin-bottom: 2rem !important;
+            }
+
+        }
+
+        &__info {
+            display: flex;
+            margin: 1.3rem 0 2rem 0;
+            border-bottom: .1rem solid #393b3c;
             padding-bottom: 1.5rem;
+            flex-wrap: wrap;
 
-            span{
+            span {
+                display: flex;
                 align-items: center;
                 font-size: 1.3rem;
-                margin-right: 1.5rem;
                 color: $color-bg-white;
 
+                @include respond(phone) {
+                    flex-direction: column;
+                    align-items: center;
+                    margin-bottom: .6rem;
+                    padding: 0 1rem;
+
+                    svg {
+                        font-size: 2rem;
+                    }
+
+                    p {
+                        margin-top: .1rem !important;
+                        height: 1.5rem;
+                        text-align: center;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: 1.5rem;
+
+                }
+
                 display: flex;
-                svg{
+
+                svg {
                     margin-right: .5rem;
                 }
             }
         }
     }
 
-    &__desc{
+    &__desc {
         margin-bottom: 3rem;
-        &__image{
-            img{
+
+        &__image {
+            img {
                 width: 97.3%;
             }
+
             margin-bottom: 2rem;
         }
-        &__info{
-            p{
+
+        &__info {
+            p {
                 font-size: 1.8rem;
                 color: $color-bg-white;
             }
         }
     }
 
-    &__video{
+    &__video {
         width: 97%;
         margin-bottom: 2rem;
-        iframe{
+
+        iframe {
             width: 100%;
             height: 45rem;
+
+            @include respond(phone) {
+                height: 22rem;
+            }
         }
     }
 }
 
-.news-product-content-list{
+.news-product-content-list {
     width: 100%;
-    margin-top: 11.8rem; 
-    
-    &__title{
-        h4{
+    margin-top: 11.8rem;
+
+    @include respond(phone) {
+        margin-top: 5.8rem;
+
+    }
+
+    &__title {
+        h4 {
             color: $color-bg-white;
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
     }
-    
-    &__card{
+
+    &__card {
         cursor: pointer;
         border-radius: .5rem;
         box-shadow: 0 0rem 1rem .1rem rgba(167, 167, 167, 0.075);
         position: relative;
-        margin-bottom: 2rem ;
-     
+        margin-bottom: 2rem;
 
-        &__overlay{
-            background-color:rgba(0, 0, 0, 0.705);
+
+        &__overlay {
+            background-color: rgba(0, 0, 0, 0.705);
             width: 100%;
             height: 100%;
             display: flex;
@@ -91,31 +136,31 @@
             top: -20%;
             z-index: -5;
             opacity: 0;
-            left:0;
+            left: 0;
             color: $color-bg-green;
 
-            &:hover{
-                &__overlay{
-                z-index: 5 !important;
-                opacity: 1 !important;
-                top: 0 !important;
+            &:hover {
+                &__overlay {
+                    z-index: 5 !important;
+                    opacity: 1 !important;
+                    top: 0 !important;
                 }
             }
 
-            span{
+            span {
                 font-size: 1.8rem;
             }
         }
 
-        &:hover &__overlay{
+        &:hover &__overlay {
             z-index: 5 !important;
             opacity: 1 !important;
             top: 0 !important;
         }
 
-        &__desc{
+        &__desc {
             position: absolute;
-            left:0 ;
+            left: 0;
             bottom: 0;
             // background-image: linear-gradient( rgba(0, 0, 0, 0.185) 20% ,rgba(53, 109, 0, 0.884));
             background: linear-gradient(rgba(3, 3, 3, 0.308) 50%, #000000d2 80%);
@@ -127,25 +172,27 @@
             justify-content: flex-end;
             padding: .5rem;
 
-           
 
-            h5{
+
+            h5 {
                 color: $color-bg-green !important;
             }
-            h6{
+
+            h6 {
                 color: $color-bg-white !important;
             }
 
         }
 
-        &:hover{
+        &:hover {
             transform: scale(0.99);
         }
-        img{
+
+        img {
             width: 100%;
             border-radius: .5rem;
         }
 
-    
+
     }
 }

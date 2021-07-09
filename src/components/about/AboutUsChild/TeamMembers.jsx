@@ -11,7 +11,7 @@ import logo6 from '../../../img/team/Tariyel aghazada managing director.png'
 
 const TeamMembers = () => {
     return(
-        <div id='6' className="home-page-content__events bg-dark d-flex-col bg-none">
+        <div id='6' className="home-page-content__events bg-dark d-flex-col flex-column-reverse bg-none">
          
             <div className="home-page-content__events__logos bg-white">
             <div className="home-page-content__events__logos__card team_card bg-green">

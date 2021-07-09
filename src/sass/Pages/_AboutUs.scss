@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: space-evenly;
 
-
     //Events
     &__events{
         // margin: rem 0;
@@ -20,6 +19,8 @@
         .local-patern{
             align-items: flex-start;
             padding: 4rem;
+           flex-direction: column-reverse !important;
+
             img{
                 display: none;
                 transform: rotate(180deg);
@@ -87,7 +88,6 @@
                 }
             }
         }
-       
 
         &__logos{
             width: 60%;
@@ -137,6 +137,7 @@
                 height: 15rem;
                 position: relative;
 
+            
            
                 .teamcontent{
                     position: absolute;
@@ -248,7 +249,9 @@
                     width: 100% !important;
                     height: 100%;
                     @include respond(phone){
-                        width: 60% !important;
+                        width: 100% !important;
+                    height: 100%;
+                        
                     }
                 }
                 img{
@@ -283,8 +286,6 @@
                     }
                 }
             }
-           
-
         }
     }
     .bg-dark{
