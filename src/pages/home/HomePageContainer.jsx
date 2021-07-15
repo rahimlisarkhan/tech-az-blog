@@ -18,7 +18,7 @@ const HomePageContainer = (props) => {
       stores.newsStore.allNews && stores.newsStore.allNews.reverse().slice(1);
 
 
-      console.log(lastInfo);
+    console.log(lastInfo);
     setLastInfo(lastInfo);
     setAllInfo(allInfo);
   }, [stores.newsStore.allNews]);
@@ -35,8 +35,7 @@ const HomePageContainer = (props) => {
           className="news-content__trend"
           onClick={() => {
             props.history.push(
-              `/esas/${lastInfo[0].type.toLowerCase()}-${
-                lastInfo[0].slug
+              `/esas/${lastInfo[0].type.toLowerCase()}-${lastInfo[0].slug
               }`
             );
           }}
@@ -47,9 +46,10 @@ const HomePageContainer = (props) => {
 
           <div className="news-content__trend__info">
             <p>
-              {lastInfo[0].type} • {lastInfo[0].created_at.split("T")[0]}{" "}
+              Xəbər
+              • {lastInfo[0].created_at.split("T")[0]}{" "}
               {lastInfo[0].created_at.split("T")[1].slice(0, 5)} tarixində
-              yükləndi{" "} 
+              yükləndi{" "}
             </p>
             <h1>{lastInfo[0].title}</h1>
           </div>
@@ -63,8 +63,7 @@ const HomePageContainer = (props) => {
                 key={index}
                 onClick={() => {
                   props.history.push(
-                    `/esas/${news.type.toLowerCase()}-${
-                      news.slug
+                    `/esas/${news.type.toLowerCase()}-${news.slug
                     }`
                   );
                 }}
@@ -79,7 +78,8 @@ const HomePageContainer = (props) => {
 
                 <div className="news-content__last__card__info">
                   <p>
-                    Xəbər • {news.created_at.split("T")[0]}{" "}
+                    Xəbər
+                    • {news.created_at.split("T")[0]}{" "}
                     {news.created_at.split("T")[1].slice(0, 5)} tarixində
                     yükləndi{" "}
                   </p>

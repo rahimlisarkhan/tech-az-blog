@@ -15,11 +15,11 @@
            flex-direction: column-reverse;
            align-items: center;
         }
+        
 
         .local-patern{
             align-items: flex-start;
             padding: 4rem;
-           flex-direction: column-reverse !important;
 
             img{
                 display: none;
@@ -248,10 +248,10 @@
                 .team{
                     width: 100% !important;
                     height: 100%;
+                    object-fit: cover;
                     @include respond(phone){
                         width: 100% !important;
-                    height: 100%;
-                        
+                        height: 100%;
                     }
                 }
                 img{

@@ -189,7 +189,7 @@
     width: 4rem;
     height: 4rem;
     cursor: pointer;
-    display: flex;
+    display: none;
     margin-right: .7rem !important;
 
     align-items: center;
@@ -197,6 +197,10 @@
     svg{
         font-size: 3.5rem;
         color: $color-bg-green;
+    }
+
+    @include respond(phone){
+        display: flex;
     }
 }
 
@@ -264,8 +268,8 @@
         margin-top: 2rem;
         display: none;
         justify-content: flex-start;
-        padding: 1rem;
-        font-size: 2.5rem;
+        padding: .5rem;
+        font-size: 2rem;
         color: $color-bg-green;
         text-align: left;
         @include respond(phone) {
@@ -274,8 +278,8 @@
         li{
             display: flex;
             align-items: center;
-            margin: 2rem 0;
-            padding: 1rem;
+            margin: 1rem 0;
+            padding: .7rem;
             svg{
                 margin-right: .8rem;
             }

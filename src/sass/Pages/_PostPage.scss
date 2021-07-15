@@ -1,5 +1,6 @@
 .news-product-content {
     width: 100%;
+    line-height: 1.7;
 
     &__title {
         margin-top: 3rem;
@@ -69,7 +70,14 @@
 
         &__image {
             img {
-                width: 97.3%;
+                width: 100%;
+                height: 45rem;
+                object-fit: cover;
+
+                @include respond(phone) {
+                    height: 25rem;
+
+                }
             }
 
             margin-bottom: 2rem;
@@ -87,12 +95,16 @@
         width: 97%;
         margin-bottom: 2rem;
 
+        @include respond(phone) {
+            width: 100%;
+        }
+
         iframe {
             width: 100%;
             height: 45rem;
 
             @include respond(phone) {
-                height: 22rem;
+                height: 30rem;
             }
         }
     }
@@ -164,7 +176,6 @@
             bottom: 0;
             // background-image: linear-gradient( rgba(0, 0, 0, 0.185) 20% ,rgba(53, 109, 0, 0.884));
             background: linear-gradient(rgba(3, 3, 3, 0.308) 50%, #000000d2 80%);
-
             width: 100%;
             height: 100%;
             display: flex;
@@ -176,9 +187,11 @@
 
             h5 {
                 color: $color-bg-green !important;
+                font-size: 1.6rem;
             }
 
             h6 {
+                font-size: 1.3rem;
                 color: $color-bg-white !important;
             }
 
@@ -191,6 +204,11 @@
         img {
             width: 100%;
             border-radius: .5rem;
+            object-fit: cover;
+
+            @include respond(phone) {
+                height: 21.8rem;
+            }
         }
 
 

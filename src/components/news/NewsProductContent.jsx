@@ -66,14 +66,17 @@ const NewsProductContent = (props) => {
                 <Carousel imgUrl={imgUrl} images={props.news.videos_images ? props.news.videos_images : props.news.news_images} />
             </div>
 
-            <div className="news-product-content__desc">
+            {props.news.content.length > 900 &&
 
-                <div className="news-product-content__desc__info height-overflow">
-                    <p>
-                        {props.news.content.slice(900)}
-                    </p>
+                <div className="news-product-content__desc">
+
+                    <div className="news-product-content__desc__info height-overflow">
+                        <p>
+                            {props.news.content.slice(900)}
+                        </p>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     )
 }

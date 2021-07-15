@@ -26,12 +26,13 @@ export default class Carousel extends Component {
     }
 
     return (
-      <div>
+      <div className="mb-4">
         <h2 className='news-image mb-4'>Xəbər haqqında digər şəkillər</h2>
         {/* <h4>First Slider</h4> */}
         <Slider
           asNavFor={this.state.nav2}
           ref={slider => (this.slider1 = slider)}
+          arrows={false}
         >
 
           {this.props.images.map((image, index) => (
@@ -46,7 +47,7 @@ export default class Carousel extends Component {
         <Slider
           asNavFor={this.state.nav1}
           ref={slider => (this.slider2 = slider)}
-          slidesToShow={3}
+          slidesToShow={4}
           swipeToSlide={true}
           focusOnSelect={true}
         >

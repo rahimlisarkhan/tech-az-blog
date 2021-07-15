@@ -1,6 +1,6 @@
 
 import Layout from "../../components/layout/Layout"
-import image from '../../img/neüs-image.jpg'
+// import image from '../../img/neüs-image.jpg'
 import stores from "../../stores"
 import { useEffect, useState } from "react";
 import Loading from "../../components/ui/loading";
@@ -71,7 +71,7 @@ const NewsPageContainer = (props) => {
 
                                 <div className="news-content__last__card__image">
                                     {/* <img src={news.image} alt='test' /> */}
-                                    <img src={image} alt='test' />
+                                    <img src={news.cover_image} alt='test' />
 
                                 </div>
 
